@@ -1,5 +1,5 @@
 export const APPROVED_STUDENT_EMAILS = [
-  "student1@example.com",
+  "aditi.coho@gmail.com",
   "student2@example.com",
   "student3@example.com",
 ] as const;
