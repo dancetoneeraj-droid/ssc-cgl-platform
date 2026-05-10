@@ -2,18 +2,36 @@
 
 import Link from "next/link";
 import { auth } from "../firebase";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { isApprovedStudentEmail } from "@/lib/approved-emails";
 
 export default function LoginPage() {
   const router = useRouter();
+  const [accessDenied, setAccessDenied] = useState(false);
+  const [nextPath, setNextPath] = useState<string | null>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setAccessDenied(params.get("denied") === "1");
+    setNextPath(params.get("next"));
+  }, []);
 
   const handleGoogleLogin = async () => {
     const provider = new GoogleAuthProvider();
 
     try {
-      await signInWithPopup(auth, provider);
-      router.push("/dashboard");
+      const result = await signInWithPopup(auth, provider);
+      if (!isApprovedStudentEmail(result.user.email)) {
+        await signOut(auth);
+        alert("Access Denied");
+        router.replace("/login?denied=1");
+        return;
+      }
+
+      const targetPath = nextPath && nextPath.startsWith("/") ? nextPath : "/dashboard";
+      router.push(targetPath);
     } catch (error) {
       console.log(error);
       alert(error instanceof Error ? error.message : "Sign in failed");
@@ -29,6 +47,11 @@ export default function LoginPage() {
         <p className="mt-2 text-sm text-slate-600">
           Continue with Google — you will enter the learner workspace instantly.
         </p>
+        {accessDenied ? (
+          <p className="mt-4 rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm font-medium text-red-700">
+            Access Denied
+          </p>
+        ) : null}
 
         <button
           type="button"
