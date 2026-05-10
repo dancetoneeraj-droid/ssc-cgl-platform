@@ -1,175 +1,166 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-100 text-black">
-      <nav className="bg-white shadow-md px-8 py-4 flex justify-between items-center">
-
-<h1 className="text-2xl font-bold text-blue-600">
-  SSC CGL Platform
-</h1>
-
-<div className="flex gap-6 text-lg font-medium">
-
-  <a href="/" className="hover:text-blue-600">
-    Home
-  </a>
-
-  <a href="#courses" className="hover:text-blue-600">
-    Courses
-  </a>
-
-  <a
-    href="https://wa.me/7976395900"
-    target="_blank"
-    className="hover:text-green-600"
-  >
-    WhatsApp
-  </a>
-
-  <a href="#" className="hover:text-blue-600">
-    Contact
-  </a>
-
-</div>
-
-</nav>
-      <section className="bg-blue-600 text-white py-20 px-6 text-center">
-        <h1 className="text-5xl font-bold mb-4">
-          SSC CGL Platform
-        </h1>
-
-        <p className="text-xl mb-6">
-          Learn SSC, CGL & Government Exam Preparation
-        </p>
-
-        <button className="bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold">
-          Join Now
-        </button>
-      </section>
-      <section className="py-16 px-6 bg-white">
-  <h2 className="text-4xl font-bold text-center mb-10">
-    GK Sections
-  </h2>
-
-  <div className="grid md:grid-cols-3 gap-6">
-
-  <a
-  href="/polity"
-  className="bg-white p-6 rounded-3xl shadow-lg block hover:scale-105 transition duration-300 border"
->
-
-  <div className="text-5xl mb-4">
-    🏛️
-  </div>
-
-  <h3 className="text-3xl font-bold mb-3 text-blue-600">
-    Polity
-  </h3>
-
-  <p className="text-gray-600">
-    Constitution, Parliament, Judiciary, Fundamental Rights and complete Indian Polity preparation.
-  </p>
-
-</a>
-
-    <div className="bg-gray-100 p-6 rounded-2xl shadow">
-      <h3 className="text-2xl font-bold mb-3">
-        History
-      </h3>
-
-      <p>
-        Ancient, Medieval and Modern Indian History.
-      </p>
-    </div>
-
-    <div className="bg-gray-100 p-6 rounded-2xl shadow">
-      <h3 className="text-2xl font-bold mb-3">
-        Geography
-      </h3>
-
-      <p>
-        Physical, Indian and World Geography lectures.
-      </p>
-    </div>
-
-    <div className="bg-gray-100 p-6 rounded-2xl shadow">
-      <h3 className="text-2xl font-bold mb-3">
-        Economics
-      </h3>
-
-      <p>
-        Indian Economy, Budget, Banking and Finance.
-      </p>
-    </div>
-
-    <div className="bg-gray-100 p-6 rounded-2xl shadow">
-      <h3 className="text-2xl font-bold mb-3">
-        Science
-      </h3>
-
-      <p>
-        Physics, Chemistry and Biology for SSC exams.
-      </p>
-    </div>
-
-    <div className="bg-gray-100 p-6 rounded-2xl shadow">
-      <h3 className="text-2xl font-bold mb-3">
-        Static GK
-      </h3>
-
-      <p>
-        Important static facts, books, awards and symbols.
-      </p>
-    </div>
-
-    <div className="bg-gray-100 p-6 rounded-2xl shadow">
-      <h3 className="text-2xl font-bold mb-3">
-        Current Affairs
-      </h3>
-
-      <p>
-        Daily and monthly current affairs updates.
-      </p>
-    </div>
-
-  </div>
-</section>
-     <section className="py-16 px-6">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          Our Courses
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-2xl shadow">
-            <h3 className="text-2xl font-semibold mb-3">
-              Quantitative Aptitude
-            </h3>
-
-            <p>
-              Complete maths preparation for SSC exams.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-2xl shadow">
-            <h3 className="text-2xl font-semibold mb-3">
-              Reasoning
-            </h3>
-
-            <p>
-              Master logical and verbal reasoning.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-2xl shadow">
-            <h3 className="text-2xl font-semibold mb-3">
-              English
-            </h3>
-
-            <p>
-              Grammar, vocabulary and comprehension classes.
-            </p>
-          </div>
+    <div className="min-h-screen bg-slate-50 text-slate-900">
+      <header className="border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 lg:px-8">
+          <Link href="/" className="text-lg font-semibold tracking-tight text-slate-900">
+            ToThePoint<span className="text-indigo-600">-SSC</span>
+          </Link>
+          <nav className="hidden items-center gap-6 text-sm font-medium text-slate-600 sm:flex">
+            <a href="#pillars" className="transition hover:text-indigo-700">
+              Subjects
+            </a>
+            <Link href="/login" className="transition hover:text-indigo-700">
+              Sign in
+            </Link>
+            <Link
+              href="/dashboard"
+              className="rounded-xl bg-indigo-600 px-4 py-2 text-white shadow-sm transition hover:bg-indigo-700"
+            >
+              Classroom
+            </Link>
+          </nav>
+          <Link
+            href="/dashboard"
+            className="rounded-xl bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm sm:hidden"
+          >
+            Study
+          </Link>
         </div>
-      </section>
-    </main>
+      </header>
+
+      <main>
+        <section className="relative overflow-hidden border-b border-slate-200/70 bg-white">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(79,70,229,0.12),transparent_55%),radial-gradient(ellipse_at_bottom_left,_rgba(14,165,233,0.08),transparent_45%)]" />
+          <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:grid-cols-[1.05fr_minmax(0,0.95fr)] lg:items-center lg:py-24 lg:px-8">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600">SSC CGL coaching</p>
+              <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-[3.35rem] lg:leading-[1.1]">
+                ToThePoint<span className="text-indigo-600">-SSC</span>
+              </h1>
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
+                Razor-sharp syllabus mapping, disciplined lecture ladders, zero clutter UI — built so you revise faster
+                between shifts, not fight the interface.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Link
+                  href="/login"
+                  className="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
+                >
+                  Start learning
+                </Link>
+                <Link
+                  href="/subjects/gk"
+                  className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-indigo-200 hover:text-indigo-800"
+                >
+                  Browse GK syllabus
+                </Link>
+              </div>
+              <dl className="mt-14 grid gap-6 sm:grid-cols-3">
+                <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-slate-400">Subjects</dt>
+                  <dd className="mt-2 text-xl font-semibold text-slate-900">Four pillars</dd>
+                  <dd className="mt-1 text-xs text-slate-500">Mathematics · English · Reasoning · GK</dd>
+                </div>
+                <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-slate-400">GK depth</dt>
+                  <dd className="mt-2 text-xl font-semibold text-slate-900">Eight lanes</dd>
+                  <dd className="mt-1 text-xs text-slate-500">History & Geography expand into exam maps</dd>
+                </div>
+                <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-slate-400">Design</dt>
+                  <dd className="mt-2 text-xl font-semibold text-slate-900">Quiet UI</dd>
+                  <dd className="mt-1 text-xs text-slate-500">Fast shells, restrained colour, tactile cards</dd>
+                </div>
+              </dl>
+            </div>
+            <div className="rounded-3xl border border-indigo-100 bg-gradient-to-br from-indigo-50 via-white to-sky-50 p-8 shadow-xl shadow-indigo-100/70">
+              <div className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-xs font-bold text-indigo-600 shadow-sm ring-1 ring-indigo-100">
+                  TP
+                </span>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-indigo-800/80">Classroom pulse</p>
+                  <p className="text-sm font-medium text-slate-700">Weekly releases · crisp notes</p>
+                </div>
+              </div>
+              <div className="mt-8 space-y-4">
+                {["GK mapped with nested routes", "Lecture ladders per topic cluster", "Google sign-in continuity"].map(
+                  (copy) => (
+                    <div
+                      key={copy}
+                      className="rounded-2xl border border-white/80 bg-white/90 p-4 text-sm font-medium text-slate-700 shadow-sm"
+                    >
+                      {copy}
+                    </div>
+                  ),
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="pillars" className="mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-20">
+          <div className="mb-10 text-center lg:text-left">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Main subject arcs</h2>
+            <p className="mt-2 text-sm text-slate-600 lg:max-w-2xl">
+              Each lane opens inside the authenticated workspace — GK receives the richest routing structure right now.
+            </p>
+          </div>
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                title: "Mathematics",
+                body: "Quant muscle — timed sets and pattern libraries.",
+              },
+              {
+                title: "English",
+                body: "Comprehension, grammar, cloze drills without noise.",
+              },
+              {
+                title: "Reasoning",
+                body: "Puzzle cadence engineered for repeatable accuracy.",
+              },
+              {
+                title: "GK",
+                body: "Polity · History · Geography · Economy · CA & more.",
+                highlight: true,
+              },
+            ].map((item) => (
+              <li key={item.title}>
+                <Link
+                  href="/dashboard"
+                  className={`group flex h-full flex-col rounded-3xl border border-slate-200/90 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg ${
+                    item.highlight ? "ring-2 ring-indigo-100" : ""
+                  }`}
+                >
+                  <h3 className="text-lg font-semibold tracking-tight text-slate-900 group-hover:text-indigo-800">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{item.body}</p>
+                  <span className="mt-4 text-xs font-semibold uppercase tracking-wide text-indigo-600">Open dashboard</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <footer className="border-t border-slate-200/80 bg-white py-10">
+          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-center text-xs text-slate-500 sm:flex-row sm:text-left lg:px-8">
+            <p>© {new Date().getFullYear()} ToThePoint-SSC · SSC CGL preparation.</p>
+            <div className="flex flex-wrap gap-4 text-slate-500">
+              <Link href="/login" className="hover:text-indigo-700">
+                Sign in
+              </Link>
+              <a href="https://wa.me/7976395900" target="_blank" rel="noopener noreferrer" className="hover:text-green-700">
+                WhatsApp
+              </a>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
   );
 }
