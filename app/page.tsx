@@ -69,7 +69,7 @@ export default function Home() {
                   <dd className="mt-2 text-xl font-semibold text-slate-900">Eight lanes</dd>
                   <dd className="mt-1 text-xs text-slate-500">History & Geography expand into exam maps</dd>
                 </div>
-                <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
+    gid            <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
                   <dt className="text-xs font-semibold uppercase tracking-wide text-slate-400">Design</dt>
                   <dd className="mt-2 text-xl font-semibold text-slate-900">Quiet UI</dd>
                   <dd className="mt-1 text-xs text-slate-500">Fast shells, restrained colour, tactile cards</dd>

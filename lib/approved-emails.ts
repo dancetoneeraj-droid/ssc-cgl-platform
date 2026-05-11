@@ -1,7 +1,11 @@
 export const APPROVED_STUDENT_EMAILS = [
-  "aditi.coho@gmail.com",
-  "student2@example.com",
-  "student3@example.com",
+  "poorvabansal7@gmail.com",
+  "kirarsachin20@gmail.com",
+  "suruchidiwedi1107@gmail.com",
+  "deek431@gmail.com",
+  "mkme2020@gmail.com",
+  "palasha770388@gmail.com",
+  "dancetoneeraj@gmail.com",
 ] as const;
 
 export function isApprovedStudentEmail(email: string | null | undefined): boolean {
