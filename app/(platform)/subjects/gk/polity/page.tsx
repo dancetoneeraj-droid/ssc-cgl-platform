@@ -15,7 +15,7 @@ export default function GKPolityPage() {
           Fundamental rights through local governance — each lecture trims noise and keeps examiner intent visible.
         </p>
       </header>
-      <LectureSeries context="Indian Polity" />
+      <LectureSeries context="Indian Polity" videoIds={{ 1: "-5TkrT-Ecs8" }} />
     </>
   );
 }
