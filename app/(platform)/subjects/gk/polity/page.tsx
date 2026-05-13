@@ -1,11 +1,14 @@
 import { GKCrumb } from "@/components/gk-crumb";
-import { LectureSeries } from "@/components/lecture-series";
+import { LectureGrid } from "@/components/lecture-grid";
+import { getFlatGkLectureList, gkFlatLectureHref } from "@/lib/lectures";
 
 export const metadata = {
   title: "Polity · GK · ToThePoint-SSC",
 };
 
 export default function GKPolityPage() {
+  const lectures = getFlatGkLectureList("polity");
+
   return (
     <>
       <GKCrumb current="Polity" />
@@ -15,7 +18,7 @@ export default function GKPolityPage() {
           Fundamental rights through local governance — each lecture trims noise and keeps examiner intent visible.
         </p>
       </header>
-      <LectureSeries context="Indian Polity" videoIds={{ 1: "-5TkrT-Ecs8" }} />
+      <LectureGrid lectures={lectures} getHref={(lec) => gkFlatLectureHref("polity", lec)} />
     </>
   );
 }

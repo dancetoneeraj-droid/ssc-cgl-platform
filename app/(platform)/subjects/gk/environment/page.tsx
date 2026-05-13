@@ -1,11 +1,14 @@
 import { GKCrumb } from "@/components/gk-crumb";
-import { LectureSeries } from "@/components/lecture-series";
+import { LectureGrid } from "@/components/lecture-grid";
+import { getFlatGkLectureList, gkFlatLectureHref } from "@/lib/lectures";
 
 export const metadata = {
   title: "Environment · GK · ToThePoint-SSC",
 };
 
 export default function GKEnvironmentPage() {
+  const lectures = getFlatGkLectureList("environment");
+
   return (
     <>
       <GKCrumb current="Environment" />
@@ -15,7 +18,7 @@ export default function GKEnvironmentPage() {
           Climate accords, protected areas, institutions — evergreen objective themes.
         </p>
       </header>
-      <LectureSeries context="Environment & ecology" />
+      <LectureGrid lectures={lectures} getHref={(lec) => gkFlatLectureHref("environment", lec)} />
     </>
   );
 }

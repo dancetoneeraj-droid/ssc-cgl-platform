@@ -1,11 +1,14 @@
 import { GKCrumb } from "@/components/gk-crumb";
-import { LectureSeries } from "@/components/lecture-series";
+import { LectureGrid } from "@/components/lecture-grid";
+import { getFlatGkLectureList, gkFlatLectureHref } from "@/lib/lectures";
 
 export const metadata = {
   title: "Economy · GK · ToThePoint-SSC",
 };
 
 export default function GKEconomyPage() {
+  const lectures = getFlatGkLectureList("economy");
+
   return (
     <>
       <GKCrumb current="Economy" />
@@ -15,7 +18,7 @@ export default function GKEconomyPage() {
           Macro indicators, banking, fiscal tools, and developmental schemes — lecture-first delivery.
         </p>
       </header>
-      <LectureSeries context="Indian Economy & economic survey themes" />
+      <LectureGrid lectures={lectures} getHref={(lec) => gkFlatLectureHref("economy", lec)} />
     </>
   );
 }

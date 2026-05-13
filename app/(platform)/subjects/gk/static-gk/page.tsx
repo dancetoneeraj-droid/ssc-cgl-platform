@@ -1,11 +1,14 @@
 import { GKCrumb } from "@/components/gk-crumb";
-import { LectureSeries } from "@/components/lecture-series";
+import { LectureGrid } from "@/components/lecture-grid";
+import { getFlatGkLectureList, gkFlatLectureHref } from "@/lib/lectures";
 
 export const metadata = {
   title: "Static GK · ToThePoint-SSC",
 };
 
 export default function GKStaticPage() {
+  const lectures = getFlatGkLectureList("static-gk");
+
   return (
     <>
       <GKCrumb current="Static GK" />
@@ -15,7 +18,7 @@ export default function GKStaticPage() {
           Symbols, honours, inventories — ideal for cram sessions between mocks.
         </p>
       </header>
-      <LectureSeries context="Static GK fact stacks" />
+      <LectureGrid lectures={lectures} getHref={(lec) => gkFlatLectureHref("static-gk", lec)} />
     </>
   );
 }

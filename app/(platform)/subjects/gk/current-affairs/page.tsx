@@ -1,11 +1,14 @@
 import { GKCrumb } from "@/components/gk-crumb";
-import { LectureSeries } from "@/components/lecture-series";
+import { LectureGrid } from "@/components/lecture-grid";
+import { getFlatGkLectureList, gkFlatLectureHref } from "@/lib/lectures";
 
 export const metadata = {
   title: "Current Affairs · GK · ToThePoint-SSC",
 };
 
 export default function GKCurrentAffairsPage() {
+  const lectures = getFlatGkLectureList("current-affairs");
+
   return (
     <>
       <GKCrumb current="Current Affairs" />
@@ -15,7 +18,7 @@ export default function GKCurrentAffairsPage() {
           Rolling window capsules — objective-friendly phrasing for speedy revision.
         </p>
       </header>
-      <LectureSeries context="Current Affairs compendium" />
+      <LectureGrid lectures={lectures} getHref={(lec) => gkFlatLectureHref("current-affairs", lec)} />
     </>
   );
 }

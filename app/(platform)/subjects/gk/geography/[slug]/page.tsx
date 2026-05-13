@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { GEOGRAPHY_TOPICS, getGeographyTopic } from "@/lib/gk-routes";
-import { LectureSeries } from "@/components/lecture-series";
+import { LectureGrid } from "@/components/lecture-grid";
 import { PlatformCrumb } from "@/components/gk-crumb";
+import { GEOGRAPHY_TOPICS, getGeographyTopic } from "@/lib/gk-routes";
+import { getGeographyLectureList, gkGeographyLectureHref } from "@/lib/lectures";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -24,6 +25,8 @@ export default async function GeographyTopicPage({ params }: Props) {
   const topic = getGeographyTopic(slug);
   if (!topic) notFound();
 
+  const lectures = getGeographyLectureList(topic.slug);
+
   return (
     <>
       <PlatformCrumb
@@ -38,7 +41,7 @@ export default async function GeographyTopicPage({ params }: Props) {
         <h1 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{topic.title}</h1>
         <p className="mt-2 max-w-2xl text-sm text-slate-600">{topic.description}</p>
       </header>
-      <LectureSeries context={topic.title} />
+      <LectureGrid lectures={lectures} getHref={(lec) => gkGeographyLectureHref(topic.slug, lec)} />
     </>
   );
 }

@@ -1,11 +1,14 @@
 import { GKCrumb } from "@/components/gk-crumb";
-import { LectureSeries } from "@/components/lecture-series";
+import { LectureGrid } from "@/components/lecture-grid";
+import { getFlatGkLectureList, gkFlatLectureHref } from "@/lib/lectures";
 
 export const metadata = {
   title: "Science · GK · ToThePoint-SSC",
 };
 
 export default function GKSciencePage() {
+  const lectures = getFlatGkLectureList("science");
+
   return (
     <>
       <GKCrumb current="Science" />
@@ -15,7 +18,7 @@ export default function GKSciencePage() {
           Cross-linked NCERT arcs with exam recall tags — three opening lectures per stream.
         </p>
       </header>
-      <LectureSeries context="General Science for SSC" />
+      <LectureGrid lectures={lectures} getHref={(lec) => gkFlatLectureHref("science", lec)} />
     </>
   );
 }
