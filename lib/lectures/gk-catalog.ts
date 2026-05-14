@@ -109,9 +109,15 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
     ),
     lecture(
       "union-executive-hotspots",
-      "Union executive — hotspots",
-      PLACEHOLDER_VIDEO,
-      { summary: "President, Council of Ministers, PM — how stems repeat in exams." },
+      "Lecture 2 (Union executive — hotspots)",
+      "https://youtu.be/PmX9ONwZ-Og?si=UamsrW45LHycw_aJ",
+      {
+        summary: "President, Council of Ministers, PM — how stems repeat in exams.",
+        pdfUrl:
+          "https://drive.google.com/file/d/19tnD0pmxiTxUFPAdM93PVv3t-9nARvPf/view?usp=drive_link",
+        mindMapUrl:
+          "https://drive.google.com/file/d/1rMC_QzS2_o4PjqC2TW25ZCx__GSVmRB0/view?usp=drive_link",
+      },
     ),
     lecture(
       "judiciary-and-bodies",
