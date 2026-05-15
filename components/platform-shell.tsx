@@ -7,7 +7,7 @@ import { useMemo, useState } from "react";
 import { auth } from "@/app/firebase";
 
 const primaryNav = [
-  { href: "/dashboard", label: "Dashboard" },
+  { href: "/", label: "Dashboard" },
   { href: "/subjects/mathematics", label: "Mathematics" },
   { href: "/subjects/english", label: "English" },
   { href: "/subjects/reasoning", label: "Reasoning" },
@@ -15,7 +15,7 @@ const primaryNav = [
 ] as const;
 
 function navActive(pathname: string, href: string) {
-  if (href === "/dashboard") return pathname === "/dashboard";
+  if (href === "/") return pathname === "/" || pathname === "/dashboard";
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
@@ -64,7 +64,7 @@ export function PlatformShell({ children }: { children: React.ReactNode }) {
           </div>
           <div className="min-w-0">
             <Link
-              href="/dashboard"
+              href="/"
               className="truncate text-sm font-semibold tracking-tight text-white transition hover:text-blue-300"
               onClick={() => setSidebarOpen(false)}
             >
@@ -136,7 +136,7 @@ export function PlatformShell({ children }: { children: React.ReactNode }) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
               </button>
-              <Link href="/dashboard" className="min-w-0 lg:hidden">
+              <Link href="/" className="min-w-0 lg:hidden">
                 <p className="truncate text-sm font-semibold text-white">ToThePoint-SSC</p>
               </Link>
               <span className="hidden text-sm text-slate-500 lg:inline">

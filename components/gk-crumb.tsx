@@ -42,7 +42,7 @@ export function GKCrumb({ current }: { current: string }) {
   return (
     <PlatformCrumb
       segments={[
-        { href: "/dashboard", label: "Dashboard" },
+        { href: "/", label: "Dashboard" },
         { href: "/subjects/gk", label: "GK" },
       ]}
       current={current}

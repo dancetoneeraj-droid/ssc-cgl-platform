@@ -40,7 +40,7 @@ export function resolveGkLecture(segments: string[]): ResolvedGkLecture | null {
         lecture,
         breadcrumbs: {
           segments: [
-            { href: "/dashboard", label: "Dashboard" },
+            { href: "/", label: "Dashboard" },
             { href: "/subjects/gk", label: "GK" },
             { href: "/subjects/gk/history", label: "History" },
             { href: `/subjects/gk/history/${period.slug}`, label: period.title },
@@ -59,7 +59,7 @@ export function resolveGkLecture(segments: string[]): ResolvedGkLecture | null {
         lecture,
         breadcrumbs: {
           segments: [
-            { href: "/dashboard", label: "Dashboard" },
+            { href: "/", label: "Dashboard" },
             { href: "/subjects/gk", label: "GK" },
             { href: "/subjects/gk/geography", label: "Geography" },
             { href: `/subjects/gk/geography/${topic.slug}`, label: topic.title },
@@ -83,7 +83,7 @@ export function resolveGkLecture(segments: string[]): ResolvedGkLecture | null {
       lecture,
       breadcrumbs: {
         segments: [
-          { href: "/dashboard", label: "Dashboard" },
+          { href: "/", label: "Dashboard" },
           { href: "/subjects/gk", label: "GK" },
           { href: `/subjects/gk/${subject}`, label: flatSubjectLabel[subject] },
         ],

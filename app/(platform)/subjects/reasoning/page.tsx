@@ -8,7 +8,7 @@ export const metadata = {
 export default function ReasoningPage() {
   return (
     <>
-      <PlatformCrumb segments={[{ href: "/dashboard", label: "Dashboard" }]} current="Reasoning" />
+      <PlatformCrumb segments={[{ href: "/", label: "Dashboard" }]} current="Reasoning" />
       <PageIntro
         title="Reasoning"
         description="Non-verbal, verbal, analogy, sequencing — scaffolded ladders for repeatable accuracy."

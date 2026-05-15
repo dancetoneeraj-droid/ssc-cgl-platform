@@ -8,7 +8,7 @@ export const metadata = {
 export default function EnglishPage() {
   return (
     <>
-      <PlatformCrumb segments={[{ href: "/dashboard", label: "Dashboard" }]} current="English" />
+      <PlatformCrumb segments={[{ href: "/", label: "Dashboard" }]} current="English" />
       <PageIntro
         title="English"
         description="Grammar drills, cloze passages, vocab ladders — optimised for SSC patterns."

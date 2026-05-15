@@ -30,7 +30,7 @@ export default function LoginPage() {
         return;
       }
 
-      const targetPath = nextPath && nextPath.startsWith("/") ? nextPath : "/dashboard";
+      const targetPath = nextPath && nextPath.startsWith("/") ? nextPath : "/";
       router.push(targetPath);
     } catch (error) {
       console.log(error);

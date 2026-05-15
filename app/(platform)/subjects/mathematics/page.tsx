@@ -8,7 +8,7 @@ export const metadata = {
 export default function MathematicsPage() {
   return (
     <>
-      <PlatformCrumb segments={[{ href: "/dashboard", label: "Dashboard" }]} current="Mathematics" />
+      <PlatformCrumb segments={[{ href: "/", label: "Dashboard" }]} current="Mathematics" />
       <PageIntro
         title="Mathematics"
         description="Quant syllabus for SSC CGL Tier I — foundation modules arriving on this lane first."

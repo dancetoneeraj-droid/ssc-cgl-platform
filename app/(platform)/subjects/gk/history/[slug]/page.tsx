@@ -32,7 +32,7 @@ export default async function HistoryPeriodPage({ params }: Props) {
     <>
       <PlatformCrumb
         segments={[
-          { href: "/dashboard", label: "Dashboard" },
+          { href: "/", label: "Dashboard" },
           { href: "/subjects/gk", label: "GK" },
           { href: "/subjects/gk/history", label: "History" },
         ]}
