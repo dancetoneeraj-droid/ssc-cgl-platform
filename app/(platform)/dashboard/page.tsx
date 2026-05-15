@@ -34,13 +34,12 @@ const subjects = [
 export default function DashboardPage() {
   return (
     <div className="space-y-12">
-      <section className="relative overflow-hidden rounded-3xl border border-blue-500/15 bg-gradient-to-br from-slate-900/80 via-slate-950 to-black p-6 shadow-[0_0_56px_-24px_var(--accent-glow)] backdrop-blur-sm ring-1 ring-white/[0.05] sm:p-10">
-        <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-400">ToThePoint-SSC</p>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Dashboard</h1>
-        <p className="relative mt-3 max-w-2xl text-sm leading-relaxed text-slate-400 sm:text-base">
-          Minimal workspace for serious SSC CGL prep. Open GK for full topic trees — History and Geography ship with
-          structured sub-modules and lecture ladders.
+      <section className="rounded-2xl border border-slate-200/90 bg-white px-6 py-10 shadow-sm sm:px-10 sm:py-12">
+        <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-slate-900 sm:text-[2.65rem]">
+          ToThePoint-SSC
+        </h1>
+        <p className="mt-4 text-base font-medium leading-snug tracking-wide text-slate-500 sm:text-lg">
+          Crisp Content • Clear Selection
         </p>
       </section>
 
