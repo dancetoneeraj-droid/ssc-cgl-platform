@@ -45,15 +45,17 @@ export function LectureDetailPanel({ lecture }: { lecture: LectureContent }) {
             <PdfGlyph />
             PDF Notes
           </a>
-          <a
-            href={lecture.mindMapUrl}
-            target="_blank"
-            rel={externalRel}
-            className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-amber-500/35 bg-amber-500/10 px-5 py-3.5 text-sm font-semibold text-amber-100 shadow-sm transition hover:border-amber-400/60 hover:bg-amber-500/15"
-          >
-            <MapGlyph />
-            Mind Map
-          </a>
+          {lecture.mindMapUrl ? (
+            <a
+              href={lecture.mindMapUrl}
+              target="_blank"
+              rel={externalRel}
+              className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-amber-500/35 bg-amber-500/10 px-5 py-3.5 text-sm font-semibold text-amber-100 shadow-sm transition hover:border-amber-400/60 hover:bg-amber-500/15"
+            >
+              <MapGlyph />
+              Mind Map
+            </a>
+          ) : null}
         </div>
       </div>
     </article>

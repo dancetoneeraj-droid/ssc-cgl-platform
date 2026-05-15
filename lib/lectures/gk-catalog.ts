@@ -15,7 +15,7 @@ function lecture(
   id: string,
   title: string,
   youtubeUrl: string,
-  options?: { pdfUrl?: string; mindMapUrl?: string; summary?: string },
+  options?: { pdfUrl?: string; mindMapUrl?: string; summary?: string; noMindMap?: boolean },
 ): LectureContent {
   return {
     id,
@@ -23,7 +23,7 @@ function lecture(
     summary: options?.summary,
     youtubeUrl,
     pdfUrl: options?.pdfUrl ?? PLACEHOLDER_PDF,
-    mindMapUrl: options?.mindMapUrl ?? PLACEHOLDER_MINDMAP,
+    ...(options?.noMindMap ? {} : { mindMapUrl: options?.mindMapUrl ?? PLACEHOLDER_MINDMAP }),
   };
 }
 
@@ -120,10 +120,15 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
       },
     ),
     lecture(
-      "judiciary-and-bodies",
-      "Judiciary & constitutional bodies",
-      PLACEHOLDER_VIDEO,
-      { summary: "Courts, tribunals, commissions — one-mark recall with trap alerts." },
+      "sources-schedules-preamble-territory-citizenship",
+      "Lecture 3 — Source of Constitution, Schedules, Preamble, Union & its Territory and Citizenship",
+      "https://youtu.be/XIqed5flY20?si=Ex9d03bbYno-wd5L",
+      {
+        summary: "Sources, Schedules, Preamble, Union territory, and citizenship — objective hotspots.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1uvUdf1zjsPHEr9XP9m9_xVXcEXQN_vHl/view?usp=drive_link",
+        noMindMap: true,
+      },
     ),
   ],
   economy: triple("Indian Economy"),

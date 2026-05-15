@@ -9,7 +9,8 @@ export type LectureContent = {
   summary?: string;
   youtubeUrl: string;
   pdfUrl: string;
-  mindMapUrl: string;
+  /** When omitted, the lecture detail page hides the mind map action. */
+  mindMapUrl?: string;
 };
 
 /** Top-level GK routes that host `/subjects/gk/lecture/{subject}/{id}` pages. */
