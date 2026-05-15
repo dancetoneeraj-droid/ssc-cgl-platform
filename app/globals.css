@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030712;
+  --foreground: #f1f5f9;
+  --muted: #94a3b8;
+  --card: rgba(15, 23, 42, 0.65);
+  --accent: #3b82f6;
+  --accent-soft: rgba(59, 130, 246, 0.14);
+  --accent-glow: rgba(59, 130, 246, 0.45);
+  --border-glow: rgba(59, 130, 246, 0.22);
+  --ring-glow: 0 0 0 1px rgba(59, 130, 246, 0.12);
 }
 
 @theme inline {
@@ -12,15 +19,14 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Subtle focus for accessibility without heavy chrome */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }

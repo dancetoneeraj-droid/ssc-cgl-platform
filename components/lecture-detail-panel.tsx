@@ -1,21 +1,30 @@
+import Link from "next/link";
+import type { AdjacentLectureLink } from "@/lib/lectures";
 import type { LectureContent } from "@/lib/lectures/types";
 import { toYouTubeEmbedSrc } from "@/lib/lectures/youtube";
 
 const externalRel = "noopener noreferrer";
 
-export function LectureDetailPanel({ lecture }: { lecture: LectureContent }) {
+type LectureDetailPanelProps = {
+  lecture: LectureContent;
+  adjacent?: { prev: AdjacentLectureLink | null; next: AdjacentLectureLink | null } | null;
+};
+
+export function LectureDetailPanel({ lecture, adjacent }: LectureDetailPanelProps) {
   const embedSrc = toYouTubeEmbedSrc(lecture.youtubeUrl);
 
   return (
-    <article className="overflow-hidden rounded-3xl border border-slate-800/90 bg-gradient-to-b from-slate-900 via-slate-950 to-black shadow-2xl shadow-black/40 ring-1 ring-white/5">
-      <div className="border-b border-slate-800/80 px-5 py-5 sm:px-8 sm:py-6">
-        <h1 className="text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">{lecture.title}</h1>
-        {lecture.summary ? <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-400">{lecture.summary}</p> : null}
+    <article className="overflow-hidden rounded-3xl border border-blue-500/20 bg-gradient-to-b from-slate-900/90 via-slate-950 to-black shadow-[0_0_60px_-20px_var(--accent-glow)] ring-1 ring-white/[0.05]">
+      <div className="border-b border-white/[0.06] px-5 py-5 sm:px-8 sm:py-7">
+        <h1 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">{lecture.title}</h1>
+        {lecture.summary ? (
+          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-400">{lecture.summary}</p>
+        ) : null}
       </div>
 
-      <div className="px-5 pb-6 pt-5 sm:px-8 sm:pb-8 sm:pt-6">
+      <div className="space-y-8 px-5 pb-8 pt-6 sm:px-8 sm:pb-10 sm:pt-8">
         {embedSrc ? (
-          <div className="overflow-hidden rounded-2xl border border-slate-800 bg-black shadow-inner">
+          <div className="overflow-hidden rounded-2xl border border-blue-500/25 bg-black shadow-[0_0_40px_-12px_var(--accent-glow)] ring-1 ring-blue-400/15">
             <div className="aspect-video">
               <iframe
                 className="h-full w-full"
@@ -28,35 +37,100 @@ export function LectureDetailPanel({ lecture }: { lecture: LectureContent }) {
             </div>
           </div>
         ) : (
-          <div className="rounded-2xl border border-dashed border-slate-700 bg-slate-900/50 px-4 py-8 text-center text-sm text-slate-400">
+          <div className="rounded-2xl border border-dashed border-blue-500/25 bg-slate-900/50 px-4 py-8 text-center text-sm text-slate-400">
             This lecture&apos;s video URL could not be parsed. Update{" "}
-            <code className="rounded bg-slate-800 px-1.5 py-0.5 text-xs text-slate-200">youtubeUrl</code> in the
+            <code className="rounded-lg bg-slate-800 px-1.5 py-0.5 text-xs text-slate-200">youtubeUrl</code> in the
             catalog.
           </div>
         )}
 
-        <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:gap-4">
-          <a
-            href={lecture.pdfUrl}
-            target="_blank"
-            rel={externalRel}
-            className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-700/90 bg-slate-800/60 px-5 py-3.5 text-sm font-semibold text-slate-100 shadow-sm transition hover:border-amber-400/50 hover:bg-slate-800 hover:text-amber-50"
-          >
-            <PdfGlyph />
-            PDF Notes
-          </a>
-          {lecture.mindMapUrl ? (
-            <a
-              href={lecture.mindMapUrl}
-              target="_blank"
-              rel={externalRel}
-              className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-amber-500/35 bg-amber-500/10 px-5 py-3.5 text-sm font-semibold text-amber-100 shadow-sm transition hover:border-amber-400/60 hover:bg-amber-500/15"
-            >
-              <MapGlyph />
-              Mind Map
-            </a>
-          ) : null}
+        <div>
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Materials</h2>
+          <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+            <li>
+              <a
+                href={lecture.pdfUrl}
+                target="_blank"
+                rel={externalRel}
+                className="group flex h-full flex-col rounded-2xl border border-blue-500/18 bg-slate-900/50 p-5 shadow-[0_0_32px_-14px_var(--accent-glow)] backdrop-blur-sm transition duration-200 hover:border-blue-400/45 hover:bg-slate-900/75 hover:shadow-[0_0_42px_-10px_var(--accent-glow)] ring-1 ring-white/[0.04]"
+              >
+                <span className="flex items-center gap-3">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600/12 text-blue-300 ring-1 ring-blue-400/25 transition group-hover:bg-blue-500/20">
+                    <PdfGlyph />
+                  </span>
+                  <span>
+                    <span className="block text-base font-semibold text-white">PDF Notes</span>
+                    <span className="mt-0.5 block text-xs text-slate-500">Opens in a new tab</span>
+                  </span>
+                </span>
+                <span className="mt-4 text-sm font-semibold text-blue-300 transition group-hover:text-blue-200">
+                  Open PDF →
+                </span>
+              </a>
+            </li>
+            {lecture.mindMapUrl ? (
+              <li>
+                <a
+                  href={lecture.mindMapUrl}
+                  target="_blank"
+                  rel={externalRel}
+                  className="group flex h-full flex-col rounded-2xl border border-blue-500/18 bg-slate-900/50 p-5 shadow-[0_0_32px_-14px_var(--accent-glow)] backdrop-blur-sm transition duration-200 hover:border-blue-400/45 hover:bg-slate-900/75 hover:shadow-[0_0_42px_-10px_var(--accent-glow)] ring-1 ring-white/[0.04]"
+                >
+                  <span className="flex items-center gap-3">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600/12 text-blue-300 ring-1 ring-blue-400/25 transition group-hover:bg-blue-500/20">
+                      <MapGlyph />
+                    </span>
+                    <span>
+                      <span className="block text-base font-semibold text-white">Mind map</span>
+                      <span className="mt-0.5 block text-xs text-slate-500">Visual recall layout</span>
+                    </span>
+                  </span>
+                  <span className="mt-4 text-sm font-semibold text-blue-300 transition group-hover:text-blue-200">
+                    Open mind map →
+                  </span>
+                </a>
+              </li>
+            ) : null}
+          </ul>
         </div>
+
+        {adjacent && (adjacent.prev || adjacent.next) ? (
+          <nav
+            className="flex flex-col gap-3 border-t border-white/[0.06] pt-8 sm:flex-row sm:items-stretch sm:justify-between sm:gap-4"
+            aria-label="Lecture navigation"
+          >
+            {adjacent.prev ? (
+              <Link
+                href={adjacent.prev.href}
+                className="group flex flex-1 flex-col rounded-2xl border border-white/10 bg-slate-900/40 px-4 py-4 text-left transition duration-200 hover:border-blue-500/30 hover:bg-slate-900/70 sm:max-w-md"
+              >
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Previous</span>
+                <span className="mt-1 flex items-center gap-2 text-sm font-semibold text-white">
+                  <span className="text-blue-400 transition group-hover:-translate-x-0.5" aria-hidden>
+                    ←
+                  </span>
+                  <span className="line-clamp-2">{adjacent.prev.title}</span>
+                </span>
+              </Link>
+            ) : (
+              <div className="hidden flex-1 sm:block" />
+            )}
+            {adjacent.next ? (
+              <Link
+                href={adjacent.next.href}
+                className="group flex flex-1 flex-col rounded-2xl border border-white/10 bg-slate-900/40 px-4 py-4 text-left transition duration-200 hover:border-blue-500/30 hover:bg-slate-900/70 sm:max-w-md sm:text-right"
+              >
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 sm:ml-auto">Next</span>
+                <span className="mt-1 flex items-center justify-end gap-2 text-sm font-semibold text-white sm:flex-row-reverse">
+                  <span className="line-clamp-2 sm:text-right">{adjacent.next.title}</span>
+                  <span className="text-blue-400 transition group-hover:translate-x-0.5" aria-hidden>
+                    →
+                  </span>
+                </span>
+              </Link>
+            ) : null}
+          </nav>
+        ) : null}
       </div>
     </article>
   );
@@ -64,7 +138,7 @@ export function LectureDetailPanel({ lecture }: { lecture: LectureContent }) {
 
 function PdfGlyph() {
   return (
-    <svg className="h-5 w-5 shrink-0 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+    <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -76,7 +150,7 @@ function PdfGlyph() {
 
 function MapGlyph() {
   return (
-    <svg className="h-5 w-5 shrink-0 opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+    <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
       <path
         strokeLinecap="round"
         strokeLinejoin="round"

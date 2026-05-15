@@ -16,23 +16,23 @@ export function PlatformCrumb({
         {segments.map((s, i) => (
           <Fragment key={s.href}>
             {i > 0 ? (
-              <li aria-hidden className="text-slate-300">
+              <li aria-hidden className="text-slate-600">
                 /
               </li>
             ) : null}
             <li>
-              <Link href={s.href} className="font-medium text-indigo-600 hover:text-indigo-800">
+              <Link href={s.href} className="font-medium text-blue-400/90 transition hover:text-blue-300">
                 {s.label}
               </Link>
             </li>
           </Fragment>
         ))}
         {segments.length > 0 ? (
-          <li aria-hidden className="text-slate-300">
+          <li aria-hidden className="text-slate-600">
             /
           </li>
         ) : null}
-        <li className="font-semibold text-slate-900">{current}</li>
+        <li className="font-semibold text-slate-200">{current}</li>
       </ol>
     </nav>
   );

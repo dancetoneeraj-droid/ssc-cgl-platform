@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PlatformCrumb } from "@/components/gk-crumb";
 import { LectureDetailPanel } from "@/components/lecture-detail-panel";
-import { collectGkLectureStaticParams, resolveGkLecture } from "@/lib/lectures";
+import { collectGkLectureStaticParams, getGkLectureAdjacentNav, resolveGkLecture } from "@/lib/lectures";
 
 type Props = {
   params: Promise<{ slug?: string[] }>;
@@ -27,11 +27,12 @@ export default async function GkLecturePage({ params }: Props) {
   if (!resolved) notFound();
 
   const { lecture, breadcrumbs } = resolved;
+  const adjacent = getGkLectureAdjacentNav(slug);
 
   return (
     <>
       <PlatformCrumb segments={breadcrumbs.segments} current={breadcrumbs.current} />
-      <LectureDetailPanel lecture={lecture} />
+      <LectureDetailPanel lecture={lecture} adjacent={adjacent} />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import { PageIntro } from "@/components/content-blocks";
 import { GKCrumb } from "@/components/gk-crumb";
 import { NavCard } from "@/components/nav-card";
 
@@ -54,13 +55,10 @@ export default function GKHubPage() {
   return (
     <>
       <GKCrumb current="Topics" />
-      <header className="mb-8">
-        <h1 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">General Knowledge</h1>
-        <p className="mt-2 max-w-2xl text-sm text-slate-600 sm:text-base">
-          GK is curated first — rich routing for History & Geography, direct lecture ladders for allied papers.
-          Everything stays featherweight for mobile study sessions.
-        </p>
-      </header>
+      <PageIntro
+        title="General Knowledge"
+        description="GK is curated first — rich routing for History & Geography, direct lecture ladders for allied papers. Featherweight on mobile study sessions."
+      />
 
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {gkSubjects.map((topic) => (

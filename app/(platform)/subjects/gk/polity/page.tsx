@@ -1,3 +1,4 @@
+import { PageIntro } from "@/components/content-blocks";
 import { GKCrumb } from "@/components/gk-crumb";
 import { LectureGrid } from "@/components/lecture-grid";
 import { getFlatGkLectureList, gkFlatLectureHref } from "@/lib/lectures";
@@ -12,12 +13,10 @@ export default function GKPolityPage() {
   return (
     <>
       <GKCrumb current="Polity" />
-      <header className="mb-8">
-        <h1 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">Polity</h1>
-        <p className="mt-2 max-w-2xl text-sm text-slate-600">
-          Fundamental rights through local governance — each lecture trims noise and keeps examiner intent visible.
-        </p>
-      </header>
+      <PageIntro
+        title="Polity"
+        description="Fundamental rights through local governance — each lecture trims noise and keeps examiner intent visible."
+      />
       <LectureGrid lectures={lectures} getHref={(lec) => gkFlatLectureHref("polity", lec)} />
     </>
   );

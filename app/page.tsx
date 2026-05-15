@@ -1,97 +1,71 @@
 import Link from "next/link";
+import { MarketingHeader } from "@/components/marketing-header";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-      <header className="border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 lg:px-8">
-          <Link href="/" className="text-lg font-semibold tracking-tight text-slate-900">
-            ToThePoint<span className="text-indigo-600">-SSC</span>
-          </Link>
-          <nav className="hidden items-center gap-6 text-sm font-medium text-slate-600 sm:flex">
-            <a href="#pillars" className="transition hover:text-indigo-700">
-              Subjects
-            </a>
-            <Link href="/login" className="transition hover:text-indigo-700">
-              Sign in
-            </Link>
-            <Link
-              href="/dashboard"
-              className="rounded-xl bg-indigo-600 px-4 py-2 text-white shadow-sm transition hover:bg-indigo-700"
-            >
-              Classroom
-            </Link>
-          </nav>
-          <Link
-            href="/dashboard"
-            className="rounded-xl bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm sm:hidden"
-          >
-            Study
-          </Link>
-        </div>
-      </header>
+    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(59,130,246,0.22),transparent_50%),radial-gradient(ellipse_80%_50%_at_100%_60%,rgba(37,99,235,0.12),transparent_45%),radial-gradient(ellipse_60%_40%_at_0%_90%,rgba(14,165,233,0.08),transparent_40%)]" />
+      <MarketingHeader />
 
-      <main>
-        <section className="relative overflow-hidden border-b border-slate-200/70 bg-white">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(79,70,229,0.12),transparent_55%),radial-gradient(ellipse_at_bottom_left,_rgba(14,165,233,0.08),transparent_45%)]" />
-          <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:grid-cols-[1.05fr_minmax(0,0.95fr)] lg:items-center lg:py-24 lg:px-8">
+      <main className="relative">
+        <section className="border-b border-white/[0.06]">
+          <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 lg:grid-cols-[1.08fr_minmax(0,0.92fr)] lg:items-center lg:gap-16 lg:px-8 lg:py-28">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-indigo-600">SSC CGL coaching</p>
-              <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-[3.35rem] lg:leading-[1.1]">
-                ToThePoint<span className="text-indigo-600">-SSC</span>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-400/90">SSC CGL preparation</p>
+              <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-[3.35rem] lg:leading-[1.06]">
+                ToThePoint<span className="text-blue-400">-SSC</span>
               </h1>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-                Razor-sharp syllabus mapping, disciplined lecture ladders, zero clutter UI — built so you revise faster
-                between shifts, not fight the interface.
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg">
+                Structured lectures, disciplined paths, zero clutter — so you revise faster between shifts instead of fighting the interface.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link
                   href="/login"
-                  className="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
+                  className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_0_32px_-6px_var(--accent-glow)] ring-1 ring-blue-400/30 transition hover:bg-blue-500"
                 >
                   Start learning
                 </Link>
                 <Link
-                  href="/subjects/gk"
-                  className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-indigo-200 hover:text-indigo-800"
+                  href="/login?next=/subjects/gk"
+                  className="inline-flex items-center justify-center rounded-xl border border-white/12 bg-white/[0.04] px-6 py-3.5 text-sm font-semibold text-slate-100 shadow-sm backdrop-blur-sm transition hover:border-blue-400/35 hover:bg-white/[0.07]"
                 >
-                  Browse GK syllabus
+                  Explore GK
                 </Link>
               </div>
-              <dl className="mt-14 grid gap-6 sm:grid-cols-3">
-                <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
-                  <dt className="text-xs font-semibold uppercase tracking-wide text-slate-400">Subjects</dt>
-                  <dd className="mt-2 text-xl font-semibold text-slate-900">Four pillars</dd>
+              <dl className="mt-14 grid gap-4 sm:grid-cols-3">
+                <div className="rounded-2xl border border-white/[0.08] bg-slate-900/40 p-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-sm ring-1 ring-blue-500/10">
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">Subjects</dt>
+                  <dd className="mt-2 text-xl font-semibold text-white">Four pillars</dd>
                   <dd className="mt-1 text-xs text-slate-500">Mathematics · English · Reasoning · GK</dd>
                 </div>
-                <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
-                  <dt className="text-xs font-semibold uppercase tracking-wide text-slate-400">GK depth</dt>
-                  <dd className="mt-2 text-xl font-semibold text-slate-900">Eight lanes</dd>
-                  <dd className="mt-1 text-xs text-slate-500">History & Geography expand into exam maps</dd>
+                <div className="rounded-2xl border border-white/[0.08] bg-slate-900/40 p-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-sm ring-1 ring-blue-500/10">
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">GK depth</dt>
+                  <dd className="mt-2 text-xl font-semibold text-white">Exam maps</dd>
+                  <dd className="mt-1 text-xs text-slate-500">History &amp; Geography with nested lecture ladders</dd>
                 </div>
-    gid            <div className="rounded-2xl border border-slate-100 bg-slate-50/70 p-4">
-                  <dt className="text-xs font-semibold uppercase tracking-wide text-slate-400">Design</dt>
-                  <dd className="mt-2 text-xl font-semibold text-slate-900">Quiet UI</dd>
-                  <dd className="mt-1 text-xs text-slate-500">Fast shells, restrained colour, tactile cards</dd>
+                <div className="rounded-2xl border border-white/[0.08] bg-slate-900/40 p-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-sm ring-1 ring-blue-500/10">
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">Experience</dt>
+                  <dd className="mt-2 text-xl font-semibold text-white">Calm &amp; fast</dd>
+                  <dd className="mt-1 text-xs text-slate-500">Mobile-friendly workspace with secure sign-in</dd>
                 </div>
               </dl>
             </div>
-            <div className="rounded-3xl border border-indigo-100 bg-gradient-to-br from-indigo-50 via-white to-sky-50 p-8 shadow-xl shadow-indigo-100/70">
+            <div className="relative rounded-3xl border border-blue-500/20 bg-gradient-to-br from-slate-900/80 via-slate-950 to-black p-8 shadow-[0_0_60px_-20px_var(--accent-glow)] backdrop-blur-sm ring-1 ring-white/[0.05] lg:p-9">
               <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-xs font-bold text-indigo-600 shadow-sm ring-1 ring-indigo-100">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600/15 text-xs font-bold text-blue-300 ring-1 ring-blue-400/25">
                   TP
                 </span>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-indigo-800/80">Classroom pulse</p>
-                  <p className="text-sm font-medium text-slate-700">Weekly releases · crisp notes</p>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-blue-300/90">Classroom pulse</p>
+                  <p className="text-sm font-medium text-slate-300">Structured releases · crisp notes</p>
                 </div>
               </div>
-              <div className="mt-8 space-y-4">
+              <div className="mt-8 space-y-3">
                 {["GK mapped with nested routes", "Lecture ladders per topic cluster", "Google sign-in continuity"].map(
                   (copy) => (
                     <div
                       key={copy}
-                      className="rounded-2xl border border-white/80 bg-white/90 p-4 text-sm font-medium text-slate-700 shadow-sm"
+                      className="rounded-2xl border border-white/[0.06] bg-slate-950/50 p-4 text-sm font-medium text-slate-300 ring-1 ring-blue-500/10"
                     >
                       {copy}
                     </div>
@@ -102,11 +76,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="pillars" className="mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-20">
+        <section id="pillars" className="mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-24">
           <div className="mb-10 text-center lg:text-left">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Main subject arcs</h2>
-            <p className="mt-2 text-sm text-slate-600 lg:max-w-2xl">
-              Each lane opens inside the authenticated workspace — GK receives the richest routing structure right now.
+            <h2 className="text-2xl font-semibold tracking-tight text-white">Main subject arcs</h2>
+            <p className="mt-2 text-sm text-slate-400 lg:max-w-2xl">
+              Each lane opens inside the authenticated workspace — GK carries the richest routing structure today.
             </p>
           </div>
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -131,30 +105,37 @@ export default function Home() {
             ].map((item) => (
               <li key={item.title}>
                 <Link
-                  href="/dashboard"
-                  className={`group flex h-full flex-col rounded-3xl border border-slate-200/90 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-indigo-200 hover:shadow-lg ${
-                    item.highlight ? "ring-2 ring-indigo-100" : ""
+                  href="/login"
+                  className={`group flex h-full flex-col rounded-3xl border border-white/[0.08] bg-slate-900/45 p-6 shadow-[0_0_40px_-22px_rgba(59,130,246,0.4)] backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:border-blue-400/35 hover:shadow-[0_0_48px_-16px_var(--accent-glow)] ring-1 ring-white/[0.04] ${
+                    item.highlight ? "ring-blue-500/25" : ""
                   }`}
                 >
-                  <h3 className="text-lg font-semibold tracking-tight text-slate-900 group-hover:text-indigo-800">
+                  <h3 className="text-lg font-semibold tracking-tight text-white transition group-hover:text-blue-200">
                     {item.title}
                   </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{item.body}</p>
-                  <span className="mt-4 text-xs font-semibold uppercase tracking-wide text-indigo-600">Open dashboard</span>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">{item.body}</p>
+                  <span className="mt-4 text-xs font-semibold uppercase tracking-wide text-blue-400/90">
+                    Open workspace →
+                  </span>
                 </Link>
               </li>
             ))}
           </ul>
         </section>
 
-        <footer className="border-t border-slate-200/80 bg-white py-10">
+        <footer className="border-t border-white/[0.06] bg-slate-950/80 py-10 backdrop-blur-sm">
           <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-center text-xs text-slate-500 sm:flex-row sm:text-left lg:px-8">
             <p>© {new Date().getFullYear()} ToThePoint-SSC · SSC CGL preparation.</p>
-            <div className="flex flex-wrap gap-4 text-slate-500">
-              <Link href="/login" className="hover:text-indigo-700">
+            <div className="flex flex-wrap justify-center gap-4 sm:justify-end">
+              <Link href="/login" className="text-slate-400 transition hover:text-blue-400">
                 Sign in
               </Link>
-              <a href="https://wa.me/7976395900" target="_blank" rel="noopener noreferrer" className="hover:text-green-700">
+              <a
+                href="https://wa.me/7976395900"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 transition hover:text-emerald-400"
+              >
                 WhatsApp
               </a>
             </div>

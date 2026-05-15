@@ -38,19 +38,19 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
 
   if (guardState === "denied") {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
-        <div className="w-full max-w-md rounded-2xl border border-red-200 bg-white p-6 text-center shadow-sm">
-          <p className="text-sm font-semibold text-red-700">Access Denied</p>
-          <p className="mt-2 text-sm text-slate-600">Your Google account is not approved for this platform.</p>
+      <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4">
+        <div className="w-full max-w-md rounded-2xl border border-red-500/25 bg-slate-900/80 p-6 text-center shadow-lg ring-1 ring-white/[0.04] backdrop-blur-sm">
+          <p className="text-sm font-semibold text-red-300">Access Denied</p>
+          <p className="mt-2 text-sm text-slate-400">Your Google account is not approved for this platform.</p>
         </div>
       </main>
     );
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
-      <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-        <p className="text-sm font-medium text-slate-700">Checking access...</p>
+    <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4">
+      <div className="w-full max-w-md rounded-2xl border border-white/10 bg-slate-900/70 p-6 text-center backdrop-blur-sm ring-1 ring-blue-500/10">
+        <p className="text-sm font-medium text-slate-300">Checking access...</p>
       </div>
     </main>
   );

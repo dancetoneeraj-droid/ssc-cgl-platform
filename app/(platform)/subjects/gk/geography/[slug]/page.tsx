@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { PageIntro } from "@/components/content-blocks";
 import { LectureGrid } from "@/components/lecture-grid";
 import { PlatformCrumb } from "@/components/gk-crumb";
 import { GEOGRAPHY_TOPICS, getGeographyTopic } from "@/lib/gk-routes";
@@ -37,10 +38,7 @@ export default async function GeographyTopicPage({ params }: Props) {
         ]}
         current={topic.title}
       />
-      <header className="mb-8">
-        <h1 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{topic.title}</h1>
-        <p className="mt-2 max-w-2xl text-sm text-slate-600">{topic.description}</p>
-      </header>
+      <PageIntro title={topic.title} description={topic.description} />
       <LectureGrid lectures={lectures} getHref={(lec) => gkGeographyLectureHref(topic.slug, lec)} />
     </>
   );

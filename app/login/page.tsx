@@ -39,16 +39,14 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-50 px-4 py-14">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_-10%,rgba(79,70,229,0.18),transparent_50%),radial-gradient(circle_at_80%_120%,rgba(14,165,233,0.12),transparent_55%)]" />
-      <div className="relative w-full max-w-md rounded-[1.75rem] border border-slate-200/90 bg-white/95 p-8 text-center shadow-xl shadow-indigo-100/70 backdrop-blur sm:p-10">
-        <p className="text-xs font-semibold uppercase tracking-widest text-indigo-600">ToThePoint-SSC</p>
-        <h1 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900">Sign in</h1>
-        <p className="mt-2 text-sm text-slate-600">
-          Continue with Google — you will enter the learner workspace instantly.
-        </p>
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 px-4 py-14">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_-10%,rgba(59,130,246,0.2),transparent_50%),radial-gradient(circle_at_80%_120%,rgba(14,165,233,0.1),transparent_55%)]" />
+      <div className="relative w-full max-w-md rounded-[1.75rem] border border-blue-500/20 bg-slate-900/70 p-8 text-center shadow-[0_0_60px_-20px_var(--accent-glow)] backdrop-blur-xl ring-1 ring-white/[0.05] sm:p-10">
+        <p className="text-xs font-semibold uppercase tracking-widest text-blue-400">ToThePoint-SSC</p>
+        <h1 className="mt-3 text-2xl font-semibold tracking-tight text-white">Sign in</h1>
+        <p className="mt-2 text-sm text-slate-400">Continue with Google — you will enter the learner workspace instantly.</p>
         {accessDenied ? (
-          <p className="mt-4 rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm font-medium text-red-700">
+          <p className="mt-4 rounded-xl border border-red-500/30 bg-red-950/50 px-3 py-2 text-sm font-medium text-red-300">
             Access Denied
           </p>
         ) : null}
@@ -56,7 +54,7 @@ export default function LoginPage() {
         <button
           type="button"
           onClick={handleGoogleLogin}
-          className="mt-8 inline-flex w-full items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm font-semibold text-slate-900 shadow-inner transition hover:border-indigo-200 hover:bg-white"
+          className="mt-8 inline-flex w-full items-center justify-center gap-3 rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3.5 text-sm font-semibold text-white shadow-inner transition hover:border-blue-400/35 hover:bg-slate-900/80"
         >
           <svg className="h-5 w-5" viewBox="0 0 24 24">
             <path
@@ -81,7 +79,7 @@ export default function LoginPage() {
 
         <p className="mt-8 text-center text-xs text-slate-500">
           Prefer browsing first?{" "}
-          <Link href="/" className="font-medium text-indigo-600 hover:text-indigo-800">
+          <Link href="/" className="font-medium text-blue-400 transition hover:text-blue-300">
             Return home
           </Link>
         </p>

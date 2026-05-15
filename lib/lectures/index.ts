@@ -12,3 +12,5 @@ export {
 export { gkHistoryLectureHref, gkGeographyLectureHref, gkFlatLectureHref, collectGkLectureStaticParams } from "./paths";
 export { resolveGkLecture } from "./resolve-gk-lecture";
 export type { ResolvedGkLecture } from "./resolve-gk-lecture";
+export { getGkLectureAdjacentNav } from "./lecture-navigation";
+export type { AdjacentLectureLink } from "./lecture-navigation";
