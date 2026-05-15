@@ -100,6 +100,17 @@ export function PlatformShell({ children }: { children: React.ReactNode }) {
           </ul>
         </nav>
 
+        <div className="border-t border-white/[0.06] px-3 py-3">
+          <p className="mb-2 px-2 text-[11px] font-semibold uppercase tracking-wider text-slate-500">Contact us</p>
+          <a
+            href="tel:+917976395900"
+            className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-slate-900/50 px-3 py-2.5 text-sm transition hover:border-blue-500/25 hover:bg-slate-900/80"
+          >
+            <span className="text-slate-500">Phone</span>
+            <span className="tabular-nums font-medium tracking-tight text-slate-200">7976395900</span>
+          </a>
+        </div>
+
         <div className="border-t border-white/[0.06] p-3">
           <button
             type="button"
@@ -132,13 +143,22 @@ export function PlatformShell({ children }: { children: React.ReactNode }) {
                 Focused prep · calm interface · fast routing
               </span>
             </div>
-            <button
-              type="button"
-              onClick={handleLogout}
-              className="hidden rounded-xl border border-white/10 bg-slate-900/60 px-3 py-2 text-sm font-medium text-slate-300 transition hover:border-blue-500/25 hover:text-white sm:inline-flex"
-            >
-              Log out
-            </button>
+            <div className="flex items-center gap-3 sm:gap-4">
+              <a
+                href="tel:+917976395900"
+                className="hidden tabular-nums text-sm font-medium text-slate-400 transition hover:text-slate-200 sm:inline"
+                aria-label="Contact us, 7976395900"
+              >
+                7976395900
+              </a>
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="hidden rounded-xl border border-white/10 bg-slate-900/60 px-3 py-2 text-sm font-medium text-slate-300 transition hover:border-blue-500/25 hover:text-white sm:inline-flex"
+              >
+                Log out
+              </button>
+            </div>
           </div>
         </header>
 
