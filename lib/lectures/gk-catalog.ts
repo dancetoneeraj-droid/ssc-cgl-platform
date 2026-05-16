@@ -130,6 +130,18 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
         noMindMap: true,
       },
     ),
+    lecture(
+      "fundamental-rights-part-1",
+      "Lecture 4 — Fundamental Right Part -I",
+      "https://youtu.be/06Q8U5v79Zg",
+      {
+        summary: "Fundamental Rights Part I — articles, scope, and exam-oriented recall.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1IAjm8eWpEsV45i9Mj2lQ4IDJgnx44ETQ/view?usp=drive_link",
+        mindMapUrl:
+          "https://drive.google.com/file/d/1ngHTCd-xRTcgdoqDgwXe6jJzniEJeknL/view?usp=drive_link",
+      },
+    ),
   ],
   economy: triple("Indian Economy"),
   science: triple("General Science"),
