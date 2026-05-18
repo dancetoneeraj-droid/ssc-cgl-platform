@@ -109,10 +109,10 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
     ),
     lecture(
       "union-executive-hotspots",
-      "Lecture 2 (Union executive — hotspots)",
+      "Lecture 2 — Making of Constitution",
       "https://youtu.be/PmX9ONwZ-Og?si=UamsrW45LHycw_aJ",
       {
-        summary: "President, Council of Ministers, PM — how stems repeat in exams.",
+        summary: "Framing of the Constitution — constituent assembly, debates, and adoption.",
         pdfUrl:
           "https://drive.google.com/file/d/19tnD0pmxiTxUFPAdM93PVv3t-9nARvPf/view?usp=drive_link",
         mindMapUrl:
@@ -136,6 +136,18 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
       "https://youtu.be/06Q8U5v79Zg",
       {
         summary: "Fundamental Rights Part I — articles, scope, and exam-oriented recall.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1IAjm8eWpEsV45i9Mj2lQ4IDJgnx44ETQ/view?usp=drive_link",
+        mindMapUrl:
+          "https://drive.google.com/file/d/1ngHTCd-xRTcgdoqDgwXe6jJzniEJeknL/view?usp=drive_link",
+      },
+    ),
+    lecture(
+      "fundamental-rights-part-2",
+      "Lecture 5 — Fundamental Right Part -2",
+      "https://youtu.be/U4LuRxNITCo?si=s8aLbrdGkCip91QF",
+      {
+        summary: "Fundamental Rights Part II — continued articles, exceptions, and exam traps.",
         pdfUrl:
           "https://drive.google.com/file/d/1IAjm8eWpEsV45i9Mj2lQ4IDJgnx44ETQ/view?usp=drive_link",
         mindMapUrl:
