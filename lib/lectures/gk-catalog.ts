@@ -154,6 +154,18 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
           "https://drive.google.com/file/d/1ngHTCd-xRTcgdoqDgwXe6jJzniEJeknL/view?usp=drive_link",
       },
     ),
+    lecture(
+      "dpsp-and-fundamental-duties",
+      "Lecture 6 — DPSP & Fundamental Duties",
+      "https://youtu.be/KyiCPCAQCEc?si=6Fyt4YnmT5zGTc8D",
+      {
+        summary: "Directive Principles of State Policy and Fundamental Duties — articles and exam hotspots.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1PyZw8b1Git9XA10mlC0iwmKdiVJX-Uvn/view?usp=drive_link",
+        mindMapUrl:
+          "https://drive.google.com/file/d/1y40o9e1Hwl2t0jJBfYw_28m1h3NOFanZ/view?usp=drive_link",
+      },
+    ),
   ],
   economy: triple("Indian Economy"),
   science: triple("General Science"),
