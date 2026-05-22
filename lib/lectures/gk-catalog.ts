@@ -166,6 +166,28 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
           "https://drive.google.com/file/d/1y40o9e1Hwl2t0jJBfYw_28m1h3NOFanZ/view?usp=drive_link",
       },
     ),
+    lecture(
+      "president-and-vice-president",
+      "Lecture 7 — President & Vice President",
+      "https://youtu.be/-pzjWD72SbE?si=69koNDSZZK6xFX-Z",
+      {
+        summary: "President and Vice President — election, powers, tenure, and exam hotspots.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1ZDk8sbJoqlWDtktDO80wm-ddupjvSheT/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "prime-minister-and-council-of-ministers",
+      "Lecture 8 — Prime Minister & Council of Ministers",
+      "https://youtu.be/Bb06n-TpMMY?si=-YxMR2Scm398DHQh",
+      {
+        summary: "Prime Minister, Council of Ministers, and collective responsibility — objective recall.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1ZDk8sbJoqlWDtktDO80wm-ddupjvSheT/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
   ],
   economy: triple("Indian Economy"),
   science: triple("General Science"),
