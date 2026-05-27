@@ -23,6 +23,9 @@ export function getYouTubeVideoId(input: string): string | null {
 
       const shorts = u.pathname.match(/^\/shorts\/([\w-]{11})/);
       if (shorts) return shorts[1];
+
+      const live = u.pathname.match(/^\/live\/([\w-]{11})/);
+      if (live) return live[1];
     }
   } catch {
     return null;

@@ -188,6 +188,17 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
         noMindMap: true,
       },
     ),
+    lecture(
+      "parliament",
+      "Lecture 9 — Parliament",
+      "https://youtube.com/live/8qVE-SCXAfY?feature=share",
+      {
+        summary: "Parliament — Lok Sabha, Rajya Sabha, sessions, and legislative process for exams.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1rwEZi4Q3jMpFAAeGScjV5BOGk453P4S_/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
   ],
   economy: triple("Indian Economy"),
   science: triple("General Science"),
