@@ -1,5 +1,5 @@
 import { GEOGRAPHY_TOPICS, HISTORY_PERIODS, type GeographySlug, type HistorySlug } from "@/lib/gk-routes";
-import type { GkFlatLectureSubject, LectureContent } from "./types";
+import type { GkFlatLectureSubject, LectureContent, PdfLink } from "./types";
 import { GK_FLAT_LECTURE_SUBJECTS } from "./types";
 
 /** Replace these host URLs when publishing your own assets. */
@@ -15,7 +15,13 @@ function lecture(
   id: string,
   title: string,
   youtubeUrl: string,
-  options?: { pdfUrl?: string; mindMapUrl?: string; summary?: string; noMindMap?: boolean },
+  options?: {
+    pdfUrl?: string;
+    extraPdfUrls?: PdfLink[];
+    mindMapUrl?: string;
+    summary?: string;
+    noMindMap?: boolean;
+  },
 ): LectureContent {
   return {
     id,
@@ -23,6 +29,7 @@ function lecture(
     summary: options?.summary,
     youtubeUrl,
     pdfUrl: options?.pdfUrl ?? PLACEHOLDER_PDF,
+    ...(options?.extraPdfUrls?.length ? { extraPdfUrls: options.extraPdfUrls } : {}),
     ...(options?.noMindMap ? {} : { mindMapUrl: options?.mindMapUrl ?? PLACEHOLDER_MINDMAP }),
   };
 }
@@ -196,6 +203,34 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
         summary: "Parliament — Lok Sabha, Rajya Sabha, sessions, and legislative process for exams.",
         pdfUrl:
           "https://drive.google.com/file/d/1rwEZi4Q3jMpFAAeGScjV5BOGk453P4S_/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "indian-judiciary",
+      "Lecture 10 — Indian Judiciary",
+      "https://youtu.be/7duLHCORrlk?si=zwv1MfrdsZppdaQ_",
+      {
+        summary: "Indian Judiciary — Supreme Court, High Courts, and constitutional jurisdiction.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1unV6k0Dub2dXalFspa0sNXbKPLdSjFFB/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "constitutional-and-statutory-bodies",
+      "Lecture 11 — Constitutional Body and Statutory Body",
+      "https://www.youtube.com/live/xVO7WG9Rcmc?si=mvtwTqgQribg9fpH",
+      {
+        summary: "Constitutional and statutory bodies — composition, mandates, and exam recall.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1Sy4lcoECJOG64wNnJtdmeq8TxoVZxtp5/view?usp=drive_link",
+        extraPdfUrls: [
+          {
+            label: "PDF Notes (Part B)",
+            url: "https://drive.google.com/file/d/1jggWQYli2tZkJ-3Q_AnI9ZtDOhDhoz9h/view?usp=drive_link",
+          },
+        ],
         noMindMap: true,
       },
     ),

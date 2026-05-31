@@ -1,4 +1,4 @@
-export type { LectureContent, GkFlatLectureSubject } from "./types";
+export type { LectureContent, GkFlatLectureSubject, PdfLink } from "./types";
 export { GK_FLAT_LECTURE_SUBJECTS } from "./types";
 export { getYouTubeVideoId, toYouTubeEmbedSrc, youtubeThumbnailUrl } from "./youtube";
 export {

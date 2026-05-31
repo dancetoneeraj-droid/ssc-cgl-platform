@@ -12,6 +12,16 @@ type LectureDetailPanelProps = {
 
 export function LectureDetailPanel({ lecture, adjacent }: LectureDetailPanelProps) {
   const embedSrc = toYouTubeEmbedSrc(lecture.youtubeUrl);
+  const pdfLinks = [
+    {
+      label: lecture.extraPdfUrls?.length ? "PDF Notes (Part A)" : "PDF Notes",
+      url: lecture.pdfUrl,
+    },
+    ...(lecture.extraPdfUrls ?? []).map((pdf) => ({
+      label: pdf.label ?? "PDF Notes",
+      url: pdf.url,
+    })),
+  ];
 
   return (
     <article className="overflow-hidden rounded-3xl border border-blue-500/20 bg-gradient-to-b from-slate-900/90 via-slate-950 to-black shadow-[0_0_60px_-20px_var(--accent-glow)] ring-1 ring-white/[0.05]">
@@ -47,27 +57,29 @@ export function LectureDetailPanel({ lecture, adjacent }: LectureDetailPanelProp
         <div>
           <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Materials</h2>
           <ul className="mt-4 grid gap-4 sm:grid-cols-2">
-            <li>
-              <a
-                href={lecture.pdfUrl}
-                target="_blank"
-                rel={externalRel}
-                className="group flex h-full flex-col rounded-2xl border border-blue-500/18 bg-slate-900/50 p-5 shadow-[0_0_32px_-14px_var(--accent-glow)] backdrop-blur-sm transition duration-200 hover:border-blue-400/45 hover:bg-slate-900/75 hover:shadow-[0_0_42px_-10px_var(--accent-glow)] ring-1 ring-white/[0.04]"
-              >
-                <span className="flex items-center gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600/12 text-blue-300 ring-1 ring-blue-400/25 transition group-hover:bg-blue-500/20">
-                    <PdfGlyph />
+            {pdfLinks.map((pdf) => (
+              <li key={pdf.url}>
+                <a
+                  href={pdf.url}
+                  target="_blank"
+                  rel={externalRel}
+                  className="group flex h-full flex-col rounded-2xl border border-blue-500/18 bg-slate-900/50 p-5 shadow-[0_0_32px_-14px_var(--accent-glow)] backdrop-blur-sm transition duration-200 hover:border-blue-400/45 hover:bg-slate-900/75 hover:shadow-[0_0_42px_-10px_var(--accent-glow)] ring-1 ring-white/[0.04]"
+                >
+                  <span className="flex items-center gap-3">
+                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600/12 text-blue-300 ring-1 ring-blue-400/25 transition group-hover:bg-blue-500/20">
+                      <PdfGlyph />
+                    </span>
+                    <span>
+                      <span className="block text-base font-semibold text-white">{pdf.label}</span>
+                      <span className="mt-0.5 block text-xs text-slate-500">Opens in a new tab</span>
+                    </span>
                   </span>
-                  <span>
-                    <span className="block text-base font-semibold text-white">PDF Notes</span>
-                    <span className="mt-0.5 block text-xs text-slate-500">Opens in a new tab</span>
+                  <span className="mt-4 text-sm font-semibold text-blue-300 transition group-hover:text-blue-200">
+                    Open PDF →
                   </span>
-                </span>
-                <span className="mt-4 text-sm font-semibold text-blue-300 transition group-hover:text-blue-200">
-                  Open PDF →
-                </span>
-              </a>
-            </li>
+                </a>
+              </li>
+            ))}
             {lecture.mindMapUrl ? (
               <li>
                 <a
