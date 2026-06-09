@@ -234,6 +234,17 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
         noMindMap: true,
       },
     ),
+    lecture(
+      "misc-topics",
+      "Lecture 12 — Misc topics",
+      "https://youtube.com/live/EdHQMGwFuQg?feature=share",
+      {
+        summary: "Miscellaneous polity topics — high-yield facts and objective recall.",
+        pdfUrl:
+          "https://drive.google.com/file/d/13Tuim5hgPz2SXm_ax99U6df6fQ4NzFsn/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
   ],
   economy: triple("Indian Economy"),
   science: triple("General Science"),
