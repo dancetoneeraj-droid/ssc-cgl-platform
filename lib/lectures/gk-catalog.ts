@@ -87,7 +87,30 @@ const historyLectures: Record<HistorySlug, LectureContent[]> = {
     ),
   ],
   medieval: triple("Medieval History"),
-  modern: triple("Modern History"),
+  modern: [
+    lecture(
+      "timeline-modern-history-1",
+      "Lecture 1 — Timeline of Modern History -1",
+      "https://youtu.be/Ny7CBDMJ-6M?si=UTDzbBq5xJfIaSLL",
+      {
+        summary: "Modern Indian history timeline — Part I: colonial era anchors and exam recall.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1M5UGIC9b6U28JkxtbA25PqSfYJlusI_l/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "timeline-modern-history-2",
+      "Lecture 2 — Timeline of Modern History -2",
+      "https://youtu.be/PKaq2TV8ePk?si=tx8d8tJUFMEyhwRo",
+      {
+        summary: "Modern Indian history timeline — Part II: freedom struggle through independence.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1M5UGIC9b6U28JkxtbA25PqSfYJlusI_l/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+  ],
   "post-independence": triple("Post Independence India"),
   "art-culture": triple("Art & Culture"),
 };
