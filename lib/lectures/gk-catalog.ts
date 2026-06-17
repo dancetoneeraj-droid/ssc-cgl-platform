@@ -100,13 +100,57 @@ const historyLectures: Record<HistorySlug, LectureContent[]> = {
       },
     ),
     lecture(
-      "timeline-modern-history-2",
-      "Lecture 2 — Timeline of Modern History -2",
+      "timeline-modern-history-1a",
+      "Lecture 1A — Timeline of Modern History -2",
       "https://youtu.be/PKaq2TV8ePk?si=tx8d8tJUFMEyhwRo",
       {
-        summary: "Modern Indian history timeline — Part II: freedom struggle through independence.",
+        summary: "Modern Indian history timeline — Part II: continuation of the colonial-era chronology.",
         pdfUrl:
           "https://drive.google.com/file/d/1M5UGIC9b6U28JkxtbA25PqSfYJlusI_l/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "eic-expansion-civil-uprising",
+      "Lecture 2 — Expansion of EIC and Downfall and Civil Uprising",
+      "https://youtu.be/khgLzFj77jM?si=eHs1j7ufDlLTdKy9",
+      {
+        summary: "East India Company expansion, decline, and early civil uprisings — objective hotspots.",
+        pdfUrl:
+          "https://drive.google.com/file/d/19-BFVGJ2BgU66WG0fRHqlu2o7FAEWZw8/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "socio-religious-reform",
+      "Lecture 3 — Socio Religious Reform",
+      "https://youtu.be/th3O2Kb9H-U?si=JEGd42xPSjjZBUXv",
+      {
+        summary: "Socio-religious reform movements — leaders, ideas, and exam recall.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1CPni0wy5gcWB_6XspTeO3haGk0NWHRZP/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "social-reformers-pre-inc",
+      "Lecture 4 — Social Reformers and PRE INC org",
+      "https://youtu.be/437-I1xgAWs?si=GffebQqU8xYv1EJh",
+      {
+        summary: "Social reformers and pre-INC organisations — names, aims, and timelines.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1jD8jrDAohnOQaPC1mHxWFpt-omJoWfc8/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "post-inc-up-to-swadeshi",
+      "Lecture 5 — Post INC organisation upto Swadesi Movement",
+      "https://youtu.be/0t0grJ3qHpI?si=bAAr4QkgfHHJ5ZNJ",
+      {
+        summary: "Post-INC organisation through the Swadeshi movement — sessions, splits, and recall.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1MQMOlnt3f0WaXu-gVRY1L5MteGsYhaGU/view?usp=drive_link",
         noMindMap: true,
       },
     ),
