@@ -154,6 +154,61 @@ const historyLectures: Record<HistorySlug, LectureContent[]> = {
         noMindMap: true,
       },
     ),
+    lecture(
+      "revolutionary-movt-gandhian-era",
+      "Lecture 6 — Revolutionary Movt Phase 1 & Gandhian Era",
+      "https://youtu.be/kT77vNA0cNQ?si=Gyg_n8N-CQfsF6hS",
+      {
+        summary: "Revolutionary movement Phase I and the Gandhian era — leaders, events, and exam recall.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1pVlOS3e80P8bT3t5kNEqyLQ96cyWnomU/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "non-cooperation-revolutionary-phase-2",
+      "Lecture 7 — Non Coperation Movt & Revolutionary Phase 2",
+      "https://youtu.be/ZzYHhAQKYEU?si=eXoYppo5ArnMDWKx",
+      {
+        summary: "Non-Cooperation Movement and revolutionary Phase II — timelines and objective hotspots.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1bGn5THKRW0WPJUH04DHAGL3ywC8JfnvV/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "cdm",
+      "Lecture 8 — CDM",
+      "https://youtu.be/Sp8A8wwMW6c?si=lE_B9sFjS0dx93wJ",
+      {
+        summary: "Civil Disobedience Movement — launch, spread, suspension, and exam traps.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1bGn5THKRW0WPJUH04DHAGL3ywC8JfnvV/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "august-offer-cripps-quit-india",
+      "Lecture 9 — August Offer, Cripps Mission, Quit India Movt",
+      "https://youtu.be/t6zDgFwpxMY?si=WXFJpwEuUj7IrG8G",
+      {
+        summary: "August Offer, Cripps Mission, and Quit India Movement — terms, outcomes, and recall.",
+        pdfUrl:
+          "https://drive.google.com/file/d/14lqjpVcWRaqsmhP9XSar407jfqTGvA7e/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "ina-education-press",
+      "Lecture 10 — Indian National Army, Education , Press",
+      "https://youtu.be/N-h19QwFPGc?si=6gCmfzqYBAnUlijl",
+      {
+        summary: "INA, colonial education policy, and press — institutions, milestones, and one-mark facts.",
+        pdfUrl:
+          "https://drive.google.com/file/d/1VO6k8Cmfy4vokv2UnTuA0m6C3w1-adGF/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
   ],
   "post-independence": triple("Post Independence India"),
   "art-culture": triple("Art & Culture"),
