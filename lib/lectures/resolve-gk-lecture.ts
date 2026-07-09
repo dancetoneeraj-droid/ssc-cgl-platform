@@ -20,6 +20,7 @@ export type ResolvedGkLecture = {
 
 const flatSubjectLabel: Record<GkFlatLectureSubject, string> = {
   polity: "Polity",
+  geography: "Geography",
   economy: "Economy",
   science: "Science",
   environment: "Environment",

@@ -1,30 +1,23 @@
-import { GEOGRAPHY_TOPICS } from "@/lib/gk-routes";
 import { PageIntro } from "@/components/content-blocks";
 import { GKCrumb } from "@/components/gk-crumb";
-import { NavCard } from "@/components/nav-card";
+import { LectureGrid } from "@/components/lecture-grid";
+import { getFlatGkLectureList, gkFlatLectureHref } from "@/lib/lectures";
 
 export const metadata = {
   title: "Geography · GK · ToThePoint-SSC",
 };
 
 export default function GKGeographyHubPage() {
+  const lectures = getFlatGkLectureList("geography");
+
   return (
     <>
       <GKCrumb current="Geography" />
       <PageIntro
         title="Geography"
-        description="Physical systems first, Indian application second — mirrored lecture cadence everywhere."
+        description="Direct geography lecture list for fast access without sub-sections."
       />
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {GEOGRAPHY_TOPICS.map((t) => (
-          <NavCard
-            key={t.slug}
-            href={`/subjects/gk/geography/${t.slug}`}
-            title={t.title}
-            description={t.description}
-          />
-        ))}
-      </ul>
+      <LectureGrid lectures={lectures} getHref={(lec) => gkFlatLectureHref("geography", lec)} />
     </>
   );
 }
