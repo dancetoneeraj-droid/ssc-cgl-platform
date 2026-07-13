@@ -369,13 +369,34 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
     ),
   ],
   geography: [
-    lecture("lecture-1", "Lecture 1", "https://youtu.be/EtBEGwhoUts?si=Pn61feIla-_qh9zU"),
-    lecture("lecture-2", "Lecture 2", "https://youtu.be/mZZQMhjtWfM?si=k7QzPuxsh1iu03GH"),
-    lecture("lecture-3", "Lecture 3", "https://youtu.be/1wwwnZRFeYQ?si=Yh5KiUryvAy41wKQ"),
-    lecture("lecture-4", "Lecture 4", "https://youtu.be/bC-9LDnNNCc?si=OKTR3AoVOaTA0m9C"),
-    lecture("lecture-5", "Lecture 5", "https://youtu.be/d0vnhY-fZeI?si=BZb4K1gT6-F5s1h4"),
-    lecture("lecture-6", "Lecture 6", "https://youtu.be/yXP_TMMfPRM?si=OpvczYf6SOsrMTEH"),
-    lecture("lecture-7", "Lecture 7", "https://youtu.be/07XZXM0CNvo?si=gvmkzFHv4fBE1OZM"),
+    lecture("lecture-1", "Lecture 1", "https://youtu.be/EtBEGwhoUts?si=Pn61feIla-_qh9zU", {
+      pdfUrl: "https://drive.google.com/file/d/1VKE6RqiO9ItLxCFBLGP1yElwWttggMxe/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-2", "Lecture 2", "https://youtu.be/mZZQMhjtWfM?si=k7QzPuxsh1iu03GH", {
+      pdfUrl: "https://drive.google.com/file/d/1wc_vKAHheaVj12AOvdD5n0en0hICOPqy/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-3", "Lecture 3", "https://youtu.be/1wwwnZRFeYQ?si=Yh5KiUryvAy41wKQ", {
+      pdfUrl: "https://drive.google.com/file/d/1T5w2DpEWOMOKznBxzqwDQgsihsy0bxGP/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-4", "Lecture 4", "https://youtu.be/bC-9LDnNNCc?si=OKTR3AoVOaTA0m9C", {
+      pdfUrl: "https://drive.google.com/file/d/1g0HRpWGJaQsSsSpRFzvB6LZBjDJ0wte0/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-5", "Lecture 5", "https://youtu.be/d0vnhY-fZeI?si=BZb4K1gT6-F5s1h4", {
+      pdfUrl: "https://drive.google.com/file/d/1UEKoUoaiCSLD8zBXXRo_SZ_KJh_g0dR4/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-6", "Lecture 6", "https://youtu.be/yXP_TMMfPRM?si=OpvczYf6SOsrMTEH", {
+      pdfUrl: "https://drive.google.com/file/d/1xPRuJXbOXSoEeBsVvlDtYH_kRCPR3ijc/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-7", "Lecture 7", "https://youtu.be/07XZXM0CNvo?si=gvmkzFHv4fBE1OZM", {
+      pdfUrl: "https://drive.google.com/file/d/1xPRuJXbOXSoEeBsVvlDtYH_kRCPR3ijc/view?usp=drive_link",
+      noMindMap: true,
+    }),
   ],
   economy: triple("Indian Economy"),
   science: triple("General Science"),
