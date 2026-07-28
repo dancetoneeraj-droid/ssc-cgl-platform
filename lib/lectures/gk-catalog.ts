@@ -61,32 +61,49 @@ function triple(context: string): LectureContent[] {
 
 const historyLectures: Record<HistorySlug, LectureContent[]> = {
   ancient: [
-    lecture(
-      "sources-and-indus",
-      "Sources, prehistory & the Indus valley",
-      "https://www.youtube.com/watch?v=LfeIv5C4wEE",
-      {
-        summary: "Archaeology-forward framing with PYQ-aligned recall anchors.",
-      },
-    ),
-    lecture(
-      "vedic-age-and-mahajanapadas",
-      "Vedic age & Mahājanapadas",
-      PLACEHOLDER_VIDEO,
-      {
-        summary: "Polity–religion interface, texts, and territorial consolidation.",
-      },
-    ),
-    lecture(
-      "mauryan-and-post-mauryan",
-      "Mauryan & post-Mauryan polities",
-      PLACEHOLDER_VIDEO,
-      {
-        summary: "Administration, economy, art — objective hotspots condensed.",
-      },
-    ),
+    lecture("lecture-1", "Lecture 1", "https://youtu.be/BOZM0ubYqvw", {
+      pdfUrl:
+        "https://drive.google.com/file/d/1B1lfDrn6kOxbp8g_Nsnky-EcDiZuxluc/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-2", "Lecture 2", "https://youtu.be/GIrSuwNoC8c", {
+      pdfUrl:
+        "https://drive.google.com/file/d/1B1lfDrn6kOxbp8g_Nsnky-EcDiZuxluc/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-3", "Lecture 3", "https://youtu.be/KAcpcFanIiw", {
+      pdfUrl:
+        "https://drive.google.com/file/d/1gYAnxAV_aQgJ1L9q9gK9gmMj0VLvA5Ta/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-4", "Lecture 4", "https://youtu.be/PlxS4o2mNXQ", {
+      pdfUrl:
+        "https://drive.google.com/file/d/1gYAnxAV_aQgJ1L9q9gK9gmMj0VLvA5Ta/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-5", "Lecture 5", "https://youtu.be/2jCJUEs4WRw", {
+      pdfUrl:
+        "https://drive.google.com/file/d/1MNDMZTp4yjIr_fmvznQMg0syxBajgFl9/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-6", "Lecture 6", "https://youtu.be/ZQXWghI3Whk", {
+      pdfUrl:
+        "https://drive.google.com/file/d/1aqqazwGPgQCPYxncY3Wv6XsDwHzHS4ii/view?usp=drive_link",
+      noMindMap: true,
+    }),
   ],
-  medieval: triple("Medieval History"),
+  medieval: [
+    lecture("lecture-1", "Lecture 1", "https://youtu.be/wHlMhXLnV0E", {
+      pdfUrl:
+        "https://drive.google.com/file/d/1fbm_zN_7x_xBZHnLITkqdxtTnEjLVRJT/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-2", "Lecture 2", "https://youtu.be/uo1CR1PDg2w", {
+      pdfUrl:
+        "https://drive.google.com/file/d/1JlBrg-4tiIBWlHC_ND-Jw5e0IelIkhE1/view?usp=drive_link",
+      noMindMap: true,
+    }),
+  ],
   modern: [
     lecture(
       "timeline-modern-history-1",
