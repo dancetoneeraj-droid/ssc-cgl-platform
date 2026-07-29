@@ -34,6 +34,7 @@ export default async function HistoryPeriodPage({ params }: Props) {
         segments={[
           { href: "/", label: "Dashboard" },
           { href: "/subjects/gk", label: "GK" },
+          { href: "/subjects/gk/full-course", label: "Full Course" },
           { href: "/subjects/gk/history", label: "History" },
         ]}
         current={period.title}

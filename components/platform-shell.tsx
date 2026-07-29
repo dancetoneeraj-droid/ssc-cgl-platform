@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { signOut } from "firebase/auth";
-import { useMemo, useState } from "react";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { useEffect, useMemo, useState } from "react";
 import { auth } from "@/app/firebase";
 
 const primaryNav = [
@@ -23,6 +23,14 @@ export function PlatformShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [userEmail, setUserEmail] = useState<string | null>(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUserEmail(user?.email ?? null);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const links = useMemo(
     () =>
@@ -33,10 +41,12 @@ export function PlatformShell({ children }: { children: React.ReactNode }) {
     [pathname],
   );
 
+  const loginHref = `/login?next=${encodeURIComponent(pathname)}`;
+
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      router.push("/login");
+      router.refresh();
     } catch (e) {
       console.error(e);
     }
@@ -112,13 +122,27 @@ export function PlatformShell({ children }: { children: React.ReactNode }) {
         </div>
 
         <div className="border-t border-white/[0.06] p-3">
-          <button
-            type="button"
-            onClick={handleLogout}
-            className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-slate-900/60 px-3 py-2.5 text-sm font-medium text-slate-300 transition hover:border-blue-500/25 hover:bg-slate-900 hover:text-white"
-          >
-            Log out
-          </button>
+          {userEmail ? (
+            <div className="space-y-2">
+              <p className="truncate px-2 text-xs text-slate-500" title={userEmail}>
+                {userEmail}
+              </p>
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-slate-900/60 px-3 py-2.5 text-sm font-medium text-slate-300 transition hover:border-blue-500/25 hover:bg-slate-900 hover:text-white"
+              >
+                Log out
+              </button>
+            </div>
+          ) : (
+            <Link
+              href={loginHref}
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-blue-500/25 bg-blue-600/15 px-3 py-2.5 text-sm font-semibold text-blue-200 transition hover:bg-blue-600/25"
+            >
+              Sign in
+            </Link>
+          )}
         </div>
       </aside>
 
@@ -140,7 +164,7 @@ export function PlatformShell({ children }: { children: React.ReactNode }) {
                 <p className="truncate text-sm font-semibold text-white">ToThePoint-SSC</p>
               </Link>
               <span className="hidden text-sm text-slate-500 lg:inline">
-                Focused prep · calm interface · fast routing
+                Browse free · Sign in for premium after payment
               </span>
             </div>
             <div className="flex items-center gap-3 sm:gap-4">
@@ -151,13 +175,22 @@ export function PlatformShell({ children }: { children: React.ReactNode }) {
               >
                 7976395900
               </a>
-              <button
-                type="button"
-                onClick={handleLogout}
-                className="hidden rounded-xl border border-white/10 bg-slate-900/60 px-3 py-2 text-sm font-medium text-slate-300 transition hover:border-blue-500/25 hover:text-white sm:inline-flex"
-              >
-                Log out
-              </button>
+              {userEmail ? (
+                <button
+                  type="button"
+                  onClick={handleLogout}
+                  className="hidden rounded-xl border border-white/10 bg-slate-900/60 px-3 py-2 text-sm font-medium text-slate-300 transition hover:border-blue-500/25 hover:text-white sm:inline-flex"
+                >
+                  Log out
+                </button>
+              ) : (
+                <Link
+                  href={loginHref}
+                  className="hidden rounded-xl border border-blue-500/25 bg-blue-600/15 px-3 py-2 text-sm font-semibold text-blue-200 transition hover:bg-blue-600/25 sm:inline-flex"
+                >
+                  Sign in
+                </Link>
+              )}
             </div>
           </div>
         </header>

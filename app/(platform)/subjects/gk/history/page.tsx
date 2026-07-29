@@ -1,6 +1,6 @@
 import { HISTORY_PERIODS } from "@/lib/gk-routes";
 import { PageIntro } from "@/components/content-blocks";
-import { GKCrumb } from "@/components/gk-crumb";
+import { FullCourseCrumb } from "@/components/gk-crumb";
 import { NavCard } from "@/components/nav-card";
 
 export const metadata = {
@@ -10,7 +10,7 @@ export const metadata = {
 export default function GKHistoryHubPage() {
   return (
     <>
-      <GKCrumb current="History" />
+      <FullCourseCrumb current="History" />
       <PageIntro
         title="History"
         description="Drill by era — every branch opens identical three-lecture cadence so students always know what to expect."

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { LectureContent } from "@/lib/lectures/types";
+import { isFreeLecture } from "@/lib/access-control";
 import { youtubeThumbnailUrl } from "@/lib/lectures/youtube";
 
 type LectureGridProps = {
@@ -10,8 +11,9 @@ type LectureGridProps = {
 export function LectureGrid({ lectures, getHref }: LectureGridProps) {
   return (
     <ul className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-      {lectures.map((lec) => {
+      {lectures.map((lec, index) => {
         const thumb = youtubeThumbnailUrl(lec.youtubeUrl);
+        const free = isFreeLecture(index);
         return (
           <li key={lec.id}>
             <Link
@@ -33,8 +35,14 @@ export function LectureGrid({ lectures, getHref }: LectureGridProps) {
                 )}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/25 to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-2">
-                  <span className="rounded-md border border-blue-400/25 bg-blue-500/15 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-blue-200">
-                    Lecture
+                  <span
+                    className={`rounded-md border px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide ${
+                      free
+                        ? "border-emerald-400/30 bg-emerald-500/15 text-emerald-200"
+                        : "border-amber-400/30 bg-amber-500/15 text-amber-200"
+                    }`}
+                  >
+                    {free ? "Free" : "Premium"}
                   </span>
                   <span className="text-[11px] font-medium text-slate-400">SSC CGL</span>
                 </div>

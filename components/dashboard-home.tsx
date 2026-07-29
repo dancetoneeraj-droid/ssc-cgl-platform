@@ -37,7 +37,7 @@ const subjects = [
   {
     href: "/subjects/gk",
     title: "GK",
-    description: "Polity to Current Affairs — deep syllabus coverage with curated lecture series.",
+    description: "PYQ (₹250) and Full Course (₹1,000) — browse free lectures without signing in.",
     tag: "Primary focus",
     emphasized: true,
   },

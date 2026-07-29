@@ -6,48 +6,18 @@ export const metadata = {
   title: "GK · ToThePoint-SSC",
 };
 
-const gkSubjects = [
+const gkTracks = [
   {
-    href: "/subjects/gk/polity",
-    title: "Polity",
-    description: "Constitution, union & state executives, judiciary, constitutional bodies.",
+    href: "/subjects/gk/pyq",
+    title: "PYQ",
+    description: "Previous year question walkthroughs by exam year. First lecture free; full PYQ bank at ₹250.",
+    meta: "₹250",
   },
   {
-    href: "/subjects/gk/history",
-    title: "History",
-    description: "Periodised ladders — Ancient through Art & Culture with lecture cards.",
-    meta: "Structured",
-  },
-  {
-    href: "/subjects/gk/geography",
-    title: "Geography",
-    description: "Climatology to Indian Geography — branching topics with lecture ladders.",
-    meta: "Structured",
-  },
-  {
-    href: "/subjects/gk/economy",
-    title: "Economy",
-    description: "Basics of economics, budgeting, monetary policy, developmental themes.",
-  },
-  {
-    href: "/subjects/gk/science",
-    title: "Science",
-    description: "NCERT-forward physics, chemistry, biology arcs with exam hotspots.",
-  },
-  {
-    href: "/subjects/gk/current-affairs",
-    title: "Current Affairs",
-    description: "Daily capsules distilled for objective recall.",
-  },
-  {
-    href: "/subjects/gk/static-gk",
-    title: "Static GK",
-    description: "Awards, honours, terminology, inventories — evergreen facts.",
-  },
-  {
-    href: "/subjects/gk/environment",
-    title: "Environment",
-    description: "Ecology, biodiversity, treaties, conventions, climate action.",
+    href: "/subjects/gk/full-course",
+    title: "Full Course",
+    description: "Complete GK syllabus — Polity, History, Geography, and all subject lecture series. First lecture free; full access at ₹1,000.",
+    meta: "₹1,000",
   },
 ];
 
@@ -57,12 +27,12 @@ export default function GKHubPage() {
       <GKCrumb current="Topics" />
       <PageIntro
         title="General Knowledge"
-        description="GK is curated first — rich routing for History & Geography, direct lecture ladders for allied papers. Featherweight on mobile study sessions."
+        description="Choose PYQ for previous-year drills, or Full Course for the complete syllabus. The first lecture in every section is free — browse without signing in."
       />
 
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {gkSubjects.map((topic) => (
-          <NavCard key={topic.href} {...topic} />
+      <ul className="grid gap-4 sm:grid-cols-2">
+        {gkTracks.map((track) => (
+          <NavCard key={track.href} {...track} />
         ))}
       </ul>
     </>

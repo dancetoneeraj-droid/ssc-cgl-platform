@@ -49,3 +49,16 @@ export function GKCrumb({ current }: { current: string }) {
     />
   );
 }
+
+export function FullCourseCrumb({ current }: { current: string }) {
+  return (
+    <PlatformCrumb
+      segments={[
+        { href: "/", label: "Dashboard" },
+        { href: "/subjects/gk", label: "GK" },
+        { href: "/subjects/gk/full-course", label: "Full Course" },
+      ]}
+      current={current}
+    />
+  );
+}

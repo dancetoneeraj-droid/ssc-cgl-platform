@@ -2,19 +2,16 @@
 
 import Link from "next/link";
 import { auth } from "../firebase";
-import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { isApprovedStudentEmail } from "@/lib/approved-emails";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [accessDenied, setAccessDenied] = useState(false);
   const [nextPath, setNextPath] = useState<string | null>(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    setAccessDenied(params.get("denied") === "1");
     setNextPath(params.get("next"));
   }, []);
 
@@ -22,14 +19,7 @@ export default function LoginPage() {
     const provider = new GoogleAuthProvider();
 
     try {
-      const result = await signInWithPopup(auth, provider);
-      if (!isApprovedStudentEmail(result.user.email)) {
-        await signOut(auth);
-        alert("Access Denied");
-        router.replace("/login?denied=1");
-        return;
-      }
-
+      await signInWithPopup(auth, provider);
       const targetPath = nextPath && nextPath.startsWith("/") ? nextPath : "/";
       router.push(targetPath);
     } catch (error) {
@@ -44,12 +34,9 @@ export default function LoginPage() {
       <div className="relative w-full max-w-md rounded-[1.75rem] border border-blue-500/20 bg-slate-900/70 p-8 text-center shadow-[0_0_60px_-20px_var(--accent-glow)] backdrop-blur-xl ring-1 ring-white/[0.05] sm:p-10">
         <p className="text-xs font-semibold uppercase tracking-widest text-blue-400">ToThePoint-SSC</p>
         <h1 className="mt-3 text-2xl font-semibold tracking-tight text-white">Sign in</h1>
-        <p className="mt-2 text-sm text-slate-400">Continue with Google — you will enter the learner workspace instantly.</p>
-        {accessDenied ? (
-          <p className="mt-4 rounded-xl border border-red-500/30 bg-red-950/50 px-3 py-2 text-sm font-medium text-red-300">
-            Access Denied
-          </p>
-        ) : null}
+        <p className="mt-2 text-sm text-slate-400">
+          Sign in with Google to unlock premium lectures after payment. Browsing and free lectures work without an account.
+        </p>
 
         <button
           type="button"

@@ -1,5 +1,5 @@
 import { PageIntro } from "@/components/content-blocks";
-import { GKCrumb } from "@/components/gk-crumb";
+import { FullCourseCrumb } from "@/components/gk-crumb";
 import { LectureGrid } from "@/components/lecture-grid";
 import { getFlatGkLectureList, gkFlatLectureHref } from "@/lib/lectures";
 
@@ -12,7 +12,7 @@ export default function GKStaticPage() {
 
   return (
     <>
-      <GKCrumb current="Static GK" />
+      <FullCourseCrumb current="Static GK" />
       <PageIntro
         title="Static GK"
         description="Symbols, honours, inventories — ideal for cram sessions between mocks."
