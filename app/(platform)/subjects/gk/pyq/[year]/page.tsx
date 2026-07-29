@@ -39,11 +39,12 @@ export default async function PyqYearPage({ params }: Props) {
       />
       <PageIntro
         title={meta.title}
-        description={`${meta.description} First lecture is free; remaining need PYQ access (₹250).`}
+        description={`${meta.description} Follow the numbered order — 13 Sept through 22 Sept, shift by shift. First lecture is free; remaining need PYQ access (₹250).`}
       />
       <LectureGrid
         lectures={lectures}
         getHref={(lec) => `/subjects/gk/pyq/lecture/${year}/${lec.id}`}
+        showSequenceNumbers
       />
     </>
   );

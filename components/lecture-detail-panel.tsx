@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { AdjacentLectureLink } from "@/lib/lectures";
+import { PLACEHOLDER_PDF } from "@/lib/lectures/gk-catalog";
 import type { LectureContent } from "@/lib/lectures/types";
 import { toYouTubeEmbedSrc } from "@/lib/lectures/youtube";
 
@@ -8,10 +9,15 @@ const externalRel = "noopener noreferrer";
 type LectureDetailPanelProps = {
   lecture: LectureContent;
   adjacent?: { prev: AdjacentLectureLink | null; next: AdjacentLectureLink | null } | null;
+  /** PYQ prep order — shows large sequence label and title below the video. */
+  sequenceNumber?: number;
 };
 
-export function LectureDetailPanel({ lecture, adjacent }: LectureDetailPanelProps) {
+export function LectureDetailPanel({ lecture, adjacent, sequenceNumber }: LectureDetailPanelProps) {
   const embedSrc = toYouTubeEmbedSrc(lecture.youtubeUrl);
+  const isPyqLayout = sequenceNumber != null;
+  const showMaterials = lecture.pdfUrl !== PLACEHOLDER_PDF || (lecture.extraPdfUrls?.length ?? 0) > 0 || lecture.mindMapUrl;
+
   const pdfLinks = [
     {
       label: lecture.extraPdfUrls?.length ? "PDF Notes (Part A)" : "PDF Notes",
@@ -25,12 +31,18 @@ export function LectureDetailPanel({ lecture, adjacent }: LectureDetailPanelProp
 
   return (
     <article className="overflow-hidden rounded-3xl border border-blue-500/20 bg-gradient-to-b from-slate-900/90 via-slate-950 to-black shadow-[0_0_60px_-20px_var(--accent-glow)] ring-1 ring-white/[0.05]">
-      <div className="border-b border-white/[0.06] px-5 py-5 sm:px-8 sm:py-7">
-        <h1 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">{lecture.title}</h1>
-        {lecture.summary ? (
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-400">{lecture.summary}</p>
-        ) : null}
-      </div>
+      {!isPyqLayout ? (
+        <div className="border-b border-white/[0.06] px-5 py-5 sm:px-8 sm:py-7">
+          <h1 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">{lecture.title}</h1>
+          {lecture.summary ? (
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-400">{lecture.summary}</p>
+          ) : null}
+        </div>
+      ) : (
+        <div className="border-b border-white/[0.06] px-5 py-4 sm:px-8 sm:py-5">
+          <p className="text-xs font-semibold uppercase tracking-wider text-blue-400">PYQ · Lecture {sequenceNumber}</p>
+        </div>
+      )}
 
       <div className="space-y-8 px-5 pb-8 pt-6 sm:px-8 sm:pb-10 sm:pt-8">
         {embedSrc ? (
@@ -54,6 +66,16 @@ export function LectureDetailPanel({ lecture, adjacent }: LectureDetailPanelProp
           </div>
         )}
 
+        {isPyqLayout ? (
+          <div className="text-center sm:text-left">
+            <h1 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">{lecture.title}</h1>
+            {lecture.summary ? (
+              <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-slate-400 sm:mx-0">{lecture.summary}</p>
+            ) : null}
+          </div>
+        ) : null}
+
+        {showMaterials ? (
         <div>
           <h2 className="text-xs font-semibold uppercase tracking-wider text-slate-500">Materials</h2>
           <ul className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -105,6 +127,7 @@ export function LectureDetailPanel({ lecture, adjacent }: LectureDetailPanelProp
             ) : null}
           </ul>
         </div>
+        ) : null}
 
         {adjacent && (adjacent.prev || adjacent.next) ? (
           <nav

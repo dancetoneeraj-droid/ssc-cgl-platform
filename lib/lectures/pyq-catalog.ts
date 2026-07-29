@@ -1,7 +1,5 @@
 import type { LectureContent } from "./types";
-import { PLACEHOLDER_PDF, PLACEHOLDER_MINDMAP } from "./gk-catalog";
-
-const PLACEHOLDER_VIDEO = "https://www.youtube.com/watch?v=ScMzIvxBSi4";
+import { PLACEHOLDER_PDF } from "./gk-catalog";
 
 export type PyqYear = "2025" | "2024" | "2023" | "2026";
 
@@ -17,7 +15,7 @@ export const PYQ_YEARS: PyqYearMeta[] = [
   {
     slug: "2025",
     title: "SSC CGL 2025",
-    description: "Previous year question walkthroughs — add your lecture videos here.",
+    description: "Previous year GK questions — date & shift wise, in exam order.",
     available: true,
   },
   {
@@ -40,38 +38,167 @@ export const PYQ_YEARS: PyqYearMeta[] = [
   },
 ];
 
-function pyqLecture(id: string, title: string, summary?: string): LectureContent {
+const PYQ_SUMMARY = "GK PYQs with elimination strategy to maximise score.";
+
+function pyqLecture(id: string, title: string, youtubeUrl: string): LectureContent {
   return {
     id,
     title,
-    summary,
-    youtubeUrl: PLACEHOLDER_VIDEO,
+    summary: PYQ_SUMMARY,
+    youtubeUrl,
     pdfUrl: PLACEHOLDER_PDF,
-    mindMapUrl: PLACEHOLDER_MINDMAP,
   };
 }
 
-/** Placeholder lectures for 2025 — replace youtubeUrl, pdfUrl, etc. as you publish. */
+/**
+ * SSC CGL 2025 PYQs — chronological order (exam date → shift).
+ * Sourced from playlist PLM90o4VChM6s (29 videos; 13 Sept has Shift 2 & 3 only).
+ */
 const pyq2025Lectures: LectureContent[] = [
   pyqLecture(
-    "pyq-2025-intro",
-    "2025 PYQ — Introduction & exam pattern",
-    "How to use this PYQ bank and what to expect from each session.",
+    "pyq-2025-09-13-shift-2",
+    "13 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=CwJ7Gw3Z4fU",
   ),
   pyqLecture(
-    "pyq-2025-set-1",
-    "2025 PYQ — Set 1 (General Awareness)",
-    "Placeholder — add your first full PYQ video set here.",
+    "pyq-2025-09-13-shift-3",
+    "13 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=jSJTZocWudY",
   ),
   pyqLecture(
-    "pyq-2025-set-2",
-    "2025 PYQ — Set 2",
-    "Placeholder — second PYQ video; requires PYQ access after the free first lecture.",
+    "pyq-2025-09-14-shift-1",
+    "14 September 2025 · Shift 1",
+    "https://www.youtube.com/watch?v=eSpHfDWyItU",
   ),
   pyqLecture(
-    "pyq-2025-set-3",
-    "2025 PYQ — Set 3",
-    "Placeholder — add more 2025 PYQ videos as you publish them.",
+    "pyq-2025-09-14-shift-2",
+    "14 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=Q7rajmWlcUo",
+  ),
+  pyqLecture(
+    "pyq-2025-09-14-shift-3",
+    "14 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=UY70__u_1-8",
+  ),
+  pyqLecture(
+    "pyq-2025-09-15-shift-1",
+    "15 September 2025 · Shift 1",
+    "https://www.youtube.com/watch?v=M-T6aA78Osk",
+  ),
+  pyqLecture(
+    "pyq-2025-09-15-shift-2",
+    "15 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=veXqElV221k",
+  ),
+  pyqLecture(
+    "pyq-2025-09-15-shift-3",
+    "15 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=t0QA4slCeNM",
+  ),
+  pyqLecture(
+    "pyq-2025-09-16-shift-1",
+    "16 September 2025 · Shift 1",
+    "https://www.youtube.com/watch?v=kkNlFlhX1-o",
+  ),
+  pyqLecture(
+    "pyq-2025-09-16-shift-2",
+    "16 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=Ck-OAFibfDo",
+  ),
+  pyqLecture(
+    "pyq-2025-09-16-shift-3",
+    "16 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=-rWzwGrsklA",
+  ),
+  pyqLecture(
+    "pyq-2025-09-17-shift-1",
+    "17 September 2025 · Shift 1",
+    "https://www.youtube.com/watch?v=quzAsgidHFc",
+  ),
+  pyqLecture(
+    "pyq-2025-09-17-shift-2",
+    "17 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=ICHJVWpzhhU",
+  ),
+  pyqLecture(
+    "pyq-2025-09-17-shift-3",
+    "17 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=1JRHy9gbnaA",
+  ),
+  pyqLecture(
+    "pyq-2025-09-18-shift-1",
+    "18 September 2025 · Shift 1",
+    "https://www.youtube.com/watch?v=IV3NL3jfAMM",
+  ),
+  pyqLecture(
+    "pyq-2025-09-18-shift-2",
+    "18 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=_PDF6Y02QBs",
+  ),
+  pyqLecture(
+    "pyq-2025-09-18-shift-3",
+    "18 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=Ysn6agZmNQk",
+  ),
+  pyqLecture(
+    "pyq-2025-09-19-shift-1",
+    "19 September 2025 · Shift 1",
+    "https://www.youtube.com/watch?v=gSDSbGwmrTg",
+  ),
+  pyqLecture(
+    "pyq-2025-09-19-shift-2",
+    "19 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=Iq4zsorXWRY",
+  ),
+  pyqLecture(
+    "pyq-2025-09-19-shift-3",
+    "19 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=x2nSFpxbdF4",
+  ),
+  pyqLecture(
+    "pyq-2025-09-20-shift-1",
+    "20 September 2025 · Shift 1",
+    "https://www.youtube.com/watch?v=vL2yOC8rgyI",
+  ),
+  pyqLecture(
+    "pyq-2025-09-20-shift-2",
+    "20 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=JWtSuc6wmGQ",
+  ),
+  pyqLecture(
+    "pyq-2025-09-20-shift-3",
+    "20 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=ThGJLXSmQb4",
+  ),
+  pyqLecture(
+    "pyq-2025-09-21-shift-1",
+    "21 September 2025 · Shift 1",
+    "https://www.youtube.com/watch?v=YpdZlcp-TAo",
+  ),
+  pyqLecture(
+    "pyq-2025-09-21-shift-2",
+    "21 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=6amb8WDPx1w",
+  ),
+  pyqLecture(
+    "pyq-2025-09-21-shift-3",
+    "21 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=CYN-ICRuauw",
+  ),
+  pyqLecture(
+    "pyq-2025-09-22-shift-1",
+    "22 September 2025 · Shift 1",
+    "https://www.youtube.com/watch?v=gPn2USzOlvY",
+  ),
+  pyqLecture(
+    "pyq-2025-09-22-shift-2",
+    "22 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=Z3cOcDNY_TI",
+  ),
+  pyqLecture(
+    "pyq-2025-09-22-shift-3",
+    "22 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=kbz-i5ZLFrQ",
   ),
 ];
 

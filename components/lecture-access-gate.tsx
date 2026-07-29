@@ -15,9 +15,11 @@ type LectureAccessGateProps = {
   lectureIndex: number;
   lecture: LectureContent;
   adjacent?: { prev: AdjacentLectureLink | null; next: AdjacentLectureLink | null } | null;
+  /** Pass through for PYQ layout (title below video, sequence label). */
+  sequenceNumber?: number;
 };
 
-export function LectureAccessGate({ track, lectureIndex, lecture, adjacent }: LectureAccessGateProps) {
+export function LectureAccessGate({ track, lectureIndex, lecture, adjacent, sequenceNumber }: LectureAccessGateProps) {
   const [email, setEmail] = useState<string | null>(null);
   const [authReady, setAuthReady] = useState(false);
 
@@ -41,7 +43,13 @@ export function LectureAccessGate({ track, lectureIndex, lecture, adjacent }: Le
   }
 
   if (free || hasTrackAccess(track, email)) {
-    return <LectureDetailPanel lecture={lecture} adjacent={adjacent} />;
+    return (
+      <LectureDetailPanel
+        lecture={lecture}
+        adjacent={adjacent}
+        sequenceNumber={sequenceNumber ?? (track === "pyq" ? lectureIndex + 1 : undefined)}
+      />
+    );
   }
 
   const loginNext = typeof window !== "undefined" ? window.location.pathname : "/";
