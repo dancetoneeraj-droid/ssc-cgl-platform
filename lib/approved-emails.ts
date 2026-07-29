@@ -1,9 +1,9 @@
 /**
  * Manual access lists — add a student's email after they pay.
- * PYQ (₹250) and Full Course (₹1000) are separate; a student may have one or both.
+ * PYQ (₹250) and Full Course (₹1,000) are managed separately from here on.
  */
 
-/** Existing students who had full platform access — migrated to Full Course. */
+/** Full Course access (₹1,000) — add emails here after manual payment. */
 export const FULL_COURSE_APPROVED_EMAILS = [
   "poorvabansal7@gmail.com",
   "kirarsachin20@gmail.com",
@@ -25,8 +25,31 @@ export const FULL_COURSE_APPROVED_EMAILS = [
   "michaelanderson883@gmail.com",
 ] as const;
 
-/** PYQ access (₹250) — add emails here after manual payment. */
-export const PYQ_APPROVED_EMAILS = [] as const;
+/**
+ * PYQ access (₹250) — add emails here after manual payment.
+ * All existing Full Course students were also granted PYQ (one-time); new students
+ * are added to one or both lists as you instruct.
+ */
+export const PYQ_APPROVED_EMAILS = [
+  "poorvabansal7@gmail.com",
+  "kirarsachin20@gmail.com",
+  "suruchidiwedi1107@gmail.com",
+  "deek431@gmail.com",
+  "mkme2020@gmail.com",
+  "palasha770388@gmail.com",
+  "dancetoneeraj@gmail.com",
+  "choudharydeepanshu824@gmail.com",
+  "ashkumar802@gmail.com",
+  "sumitamandal1983@gmail.com",
+  "laxmiratnappa@gmail.com",
+  "aditi.coho@gmail.com",
+  "saeednitjsr@gmail.com",
+  "sandeep011524@gmail.com",
+  "sharmayamini2025@gmail.com",
+  "ankitsharma8397@gmail.com",
+  "gpalak149@gmail.com",
+  "michaelanderson883@gmail.com",
+] as const;
 
 function normalizeEmail(email: string | null | undefined): string | null {
   if (!email) return null;
