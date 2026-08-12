@@ -415,7 +415,36 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
       noMindMap: true,
     }),
   ],
-  economy: triple("Indian Economy"),
+  economy: [
+    lecture("lecture-1", "Lecture 1", "https://youtu.be/XFGaskx91MQ", {
+      pdfUrl: "https://drive.google.com/file/d/1LZmA80yvfgmg_Lq2pP6r7RENJVKFu9ku/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-2", "Lecture 2", "https://youtu.be/wEZWXAXlaDE", {
+      pdfUrl: "https://drive.google.com/file/d/1c6fS41ulqSdXjnxZRSK_-NuGb4Zy3dOB/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-3", "Lecture 3", "https://youtu.be/4mmgG0wClnY", {
+      pdfUrl: "https://drive.google.com/file/d/1vl-TTsveBLr7RtksMopC3bA4DiA9OIPt/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-4", "Lecture 4", "https://youtu.be/lvQBLwwR6Rw", {
+      pdfUrl: "https://drive.google.com/file/d/1vl-TTsveBLr7RtksMopC3bA4DiA9OIPt/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-5", "Lecture 5", "https://youtu.be/RP-F_uZRmcM", {
+      pdfUrl: "https://drive.google.com/file/d/1uJNffWS2PO5JxsKQocANCqkDuf84I38u/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-6", "Lecture 6", "https://youtu.be/XFCqYDzbpTI", {
+      pdfUrl: "https://drive.google.com/file/d/1dVYzl54bjMPOKAMdqwwLjcpg0jPcQOT2/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-7", "Lecture 7", "https://youtu.be/kGbfFtnMMPw", {
+      pdfUrl: "https://drive.google.com/file/d/1dVYzl54bjMPOKAMdqwwLjcpg0jPcQOT2/view?usp=drive_link",
+      noMindMap: true,
+    }),
+  ],
   science: triple("General Science"),
   environment: triple("Environment & ecology"),
   "static-gk": triple("Static GK"),
