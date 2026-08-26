@@ -15,7 +15,13 @@ export const PYQ_YEARS: PyqYearMeta[] = [
   {
     slug: "2025",
     title: "SSC CGL 2025",
-    description: "Previous year GK questions — date & shift wise, in exam order.",
+    description: "Previous year GK questions — 13 to 22 Sept 2025, date & shift wise.",
+    available: true,
+  },
+  {
+    slug: "2026",
+    title: "SSC CGL 2026",
+    description: "Previous year GK questions — 23 to 26 Sept 2025, date & shift wise.",
     available: true,
   },
   {
@@ -28,12 +34,6 @@ export const PYQ_YEARS: PyqYearMeta[] = [
     slug: "2023",
     title: "SSC CGL 2023",
     description: "2023 PYQ series — you can add lectures when ready.",
-    available: false,
-  },
-  {
-    slug: "2026",
-    title: "SSC CGL 2026",
-    description: "2026 PYQ series — placeholder for future content.",
     available: false,
   },
 ];
@@ -202,8 +202,76 @@ const pyq2025Lectures: LectureContent[] = [
   ),
 ];
 
+/**
+ * SSC CGL 2026 cycle PYQs — 23–26 Sept 2025 (chronological exam order).
+ * Sourced from playlist PLPwr7VBzR0Ok (12 videos).
+ */
+const pyq2026Lectures: LectureContent[] = [
+  pyqLecture(
+    "pyq-2026-09-23-shift-1",
+    "23 September 2025 · Shift 1",
+    "https://www.youtube.com/watch?v=RdcCqazg_4g",
+  ),
+  pyqLecture(
+    "pyq-2026-09-23-shift-2",
+    "23 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=kM5FCAsNNg4",
+  ),
+  pyqLecture(
+    "pyq-2026-09-23-shift-3",
+    "23 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=cuV6cckIShU",
+  ),
+  pyqLecture(
+    "pyq-2026-09-24-shift-1",
+    "24 September 2025 · Shift 1",
+    "https://www.youtube.com/watch?v=tWwpClPhiHA",
+  ),
+  pyqLecture(
+    "pyq-2026-09-24-shift-2",
+    "24 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=tiQIESLpiR4",
+  ),
+  pyqLecture(
+    "pyq-2026-09-24-shift-3",
+    "24 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=IrFqN85CECU",
+  ),
+  pyqLecture(
+    "pyq-2026-09-25-shift-1",
+    "25 September 2025 · Shift 1",
+    "https://www.youtube.com/watch?v=4EO2AKKSofU",
+  ),
+  pyqLecture(
+    "pyq-2026-09-25-shift-2",
+    "25 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=rY-mW_idF_8",
+  ),
+  pyqLecture(
+    "pyq-2026-09-25-shift-3",
+    "25 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=QmB9nG948LE",
+  ),
+  pyqLecture(
+    "pyq-2026-09-26-shift-1",
+    "26 September 2025 · Shift 1",
+    "https://www.youtube.com/watch?v=tdNu2bilDPg",
+  ),
+  pyqLecture(
+    "pyq-2026-09-26-shift-2",
+    "26 September 2025 · Shift 2",
+    "https://www.youtube.com/watch?v=93lEndoetOc",
+  ),
+  pyqLecture(
+    "pyq-2026-09-26-shift-3",
+    "26 September 2025 · Shift 3",
+    "https://www.youtube.com/watch?v=jqj3zNgXSNo",
+  ),
+];
+
 const pyqByYear: Partial<Record<PyqYear, LectureContent[]>> = {
   "2025": pyq2025Lectures,
+  "2026": pyq2026Lectures,
 };
 
 export function getPyqYearMeta(year: string): PyqYearMeta | undefined {

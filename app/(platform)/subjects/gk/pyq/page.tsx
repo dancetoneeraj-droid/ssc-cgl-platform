@@ -19,7 +19,7 @@ export default function GKPyqHubPage() {
       />
       <PageIntro
         title="Previous Year Questions (PYQ)"
-        description="Year-wise PYQ video series. Starting with 2025 — add more years as you publish. First lecture free; full PYQ access at ₹250."
+        description="Year-wise PYQ video series for SSC CGL. First lecture free; full PYQ access at ₹250."
       />
 
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

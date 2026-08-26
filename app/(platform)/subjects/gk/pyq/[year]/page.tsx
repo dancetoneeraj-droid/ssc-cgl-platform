@@ -10,7 +10,10 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  return [{ year: "2025" }];
+  return [
+    { year: "2025" },
+    { year: "2026" },
+  ];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -39,7 +42,7 @@ export default async function PyqYearPage({ params }: Props) {
       />
       <PageIntro
         title={meta.title}
-        description={`${meta.description} Follow the numbered order — 13 Sept through 22 Sept, shift by shift. First lecture is free; remaining need PYQ access (₹250).`}
+        description={`${meta.description} Follow the numbered order, shift by shift. First lecture is free; remaining need PYQ access (₹250).`}
       />
       <LectureGrid
         lectures={lectures}
