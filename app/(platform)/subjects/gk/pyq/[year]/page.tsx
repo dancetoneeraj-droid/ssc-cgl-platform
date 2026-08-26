@@ -10,10 +10,7 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-  return [
-    { year: "2025" },
-    { year: "2026" },
-  ];
+  return [{ year: "2025" }];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
