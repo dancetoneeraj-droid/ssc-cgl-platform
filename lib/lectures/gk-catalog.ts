@@ -228,7 +228,48 @@ const historyLectures: Record<HistorySlug, LectureContent[]> = {
     ),
   ],
   "post-independence": triple("Post Independence India"),
-  "art-culture": triple("Art & Culture"),
+  "art-culture": [
+    lecture(
+      "lecture-1",
+      "Lecture 1",
+      "https://www.youtube.com/watch?v=sMBGdqwmzF4",
+      {
+        pdfUrl:
+          "https://drive.google.com/file/d/1eRmGZkws5oppurpHhMJT8t-NVU_D1bfX/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "lecture-2",
+      "Lecture 2",
+      "https://www.youtube.com/watch?v=KdTrCuecJfo",
+      {
+        pdfUrl:
+          "https://drive.google.com/file/d/1SOp95KvWTS280UGnLOeV6bSvJj7YqFU9/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "lecture-3",
+      "Lecture 3",
+      "https://www.youtube.com/watch?v=m-S02j9qYaM",
+      {
+        pdfUrl:
+          "https://drive.google.com/file/d/1cH98N2jhLYofSvU8hm3-QfAKB7YegPn6/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+    lecture(
+      "lecture-4",
+      "Lecture 4",
+      "https://www.youtube.com/watch?v=wlpSBRemukc",
+      {
+        pdfUrl:
+          "https://drive.google.com/file/d/12vAeBRejRrckvK6i-OTSw71nDU2vEeL8/view?usp=drive_link",
+        noMindMap: true,
+      },
+    ),
+  ],
 };
 
 const geographyLectures: Record<GeographySlug, LectureContent[]> = {
