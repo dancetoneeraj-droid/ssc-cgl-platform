@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import { PlatformCrumb } from "@/components/gk-crumb";
 import { LectureAccessGate } from "@/components/lecture-access-gate";
@@ -22,6 +22,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function GkLecturePage({ params }: Props) {
   const { slug } = await params;
   if (!slug?.length) notFound();
+
+  // Old flat geography URLs → Physical Geography nested path
+  if (slug.length === 2 && slug[0] === "geography") {
+    permanentRedirect(`/subjects/gk/lecture/geography/physical-geography/${slug[1]}`);
+  }
 
   const resolved = resolveGkLecture(slug);
   if (!resolved) notFound();

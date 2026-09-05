@@ -273,11 +273,62 @@ const historyLectures: Record<HistorySlug, LectureContent[]> = {
 };
 
 const geographyLectures: Record<GeographySlug, LectureContent[]> = {
-  climatology: triple("Climatology"),
-  oceanography: triple("Oceanography"),
-  geomorphology: triple("Geomorphology"),
-  "human-geography": triple("Human Geography"),
-  "indian-geography": triple("Indian Geography"),
+  "physical-geography": [
+    lecture("lecture-1", "Lecture 1", "https://youtu.be/EtBEGwhoUts?si=Pn61feIla-_qh9zU", {
+      pdfUrl: "https://drive.google.com/file/d/1VKE6RqiO9ItLxCFBLGP1yElwWttggMxe/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-2", "Lecture 2", "https://youtu.be/mZZQMhjtWfM?si=k7QzPuxsh1iu03GH", {
+      pdfUrl: "https://drive.google.com/file/d/1wc_vKAHheaVj12AOvdD5n0en0hICOPqy/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-3", "Lecture 3", "https://youtu.be/1wwwnZRFeYQ?si=Yh5KiUryvAy41wKQ", {
+      pdfUrl: "https://drive.google.com/file/d/1T5w2DpEWOMOKznBxzqwDQgsihsy0bxGP/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-4", "Lecture 4", "https://youtu.be/bC-9LDnNNCc?si=OKTR3AoVOaTA0m9C", {
+      pdfUrl: "https://drive.google.com/file/d/1g0HRpWGJaQsSsSpRFzvB6LZBjDJ0wte0/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-5", "Lecture 5", "https://youtu.be/d0vnhY-fZeI?si=BZb4K1gT6-F5s1h4", {
+      pdfUrl: "https://drive.google.com/file/d/1UEKoUoaiCSLD8zBXXRo_SZ_KJh_g0dR4/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-6", "Lecture 6", "https://youtu.be/yXP_TMMfPRM?si=OpvczYf6SOsrMTEH", {
+      pdfUrl: "https://drive.google.com/file/d/1xPRuJXbOXSoEeBsVvlDtYH_kRCPR3ijc/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-7", "Lecture 7", "https://youtu.be/07XZXM0CNvo?si=gvmkzFHv4fBE1OZM", {
+      pdfUrl: "https://drive.google.com/file/d/1xPRuJXbOXSoEeBsVvlDtYH_kRCPR3ijc/view?usp=drive_link",
+      noMindMap: true,
+    }),
+  ],
+  "indian-geography": [
+    lecture("lecture-1", "Lecture 1", "https://www.youtube.com/watch?v=PN-HEVNZTQE", {
+      pdfUrl: "https://drive.google.com/file/d/1Tvi5G3OfaHPByZpcvUDsIUTmHIqGQIV0/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-2", "Lecture 2", "https://www.youtube.com/watch?v=pj46Wbkl55E", {
+      pdfUrl: "https://drive.google.com/file/d/1ogYsdSznvzz-CokJ8AHJbfWs5aGP2gmK/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-3", "Lecture 3", "https://www.youtube.com/watch?v=a8YVexorgPk", {
+      pdfUrl: "https://drive.google.com/file/d/1aKN7ahvksYngdqWYq0MZJLJOxtGHDrk-/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-4", "Lecture 4", "https://www.youtube.com/watch?v=lIg_wepLo1k", {
+      pdfUrl: "https://drive.google.com/file/d/1LR-OyFnwlU3LsDEIhXB4S664rgQ6KREJ/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-5", "Lecture 5", "https://www.youtube.com/watch?v=2vlSiEaWkuU", {
+      pdfUrl: "https://drive.google.com/file/d/1KSaG1oxCPxgPz6lt4jbkQvkm4qRaDkuf/view?usp=drive_link",
+      noMindMap: true,
+    }),
+    lecture("lecture-6", "Lecture 6", "https://www.youtube.com/watch?v=152OORJ0x38", {
+      pdfUrl: "https://drive.google.com/file/d/1MyPXG4F7vQCwUS35RPHYCsh9ZZIi96rw/view?usp=drive_link",
+      noMindMap: true,
+    }),
+  ],
 };
 
 const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
@@ -425,36 +476,6 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
         noMindMap: true,
       },
     ),
-  ],
-  geography: [
-    lecture("lecture-1", "Lecture 1", "https://youtu.be/EtBEGwhoUts?si=Pn61feIla-_qh9zU", {
-      pdfUrl: "https://drive.google.com/file/d/1VKE6RqiO9ItLxCFBLGP1yElwWttggMxe/view?usp=drive_link",
-      noMindMap: true,
-    }),
-    lecture("lecture-2", "Lecture 2", "https://youtu.be/mZZQMhjtWfM?si=k7QzPuxsh1iu03GH", {
-      pdfUrl: "https://drive.google.com/file/d/1wc_vKAHheaVj12AOvdD5n0en0hICOPqy/view?usp=drive_link",
-      noMindMap: true,
-    }),
-    lecture("lecture-3", "Lecture 3", "https://youtu.be/1wwwnZRFeYQ?si=Yh5KiUryvAy41wKQ", {
-      pdfUrl: "https://drive.google.com/file/d/1T5w2DpEWOMOKznBxzqwDQgsihsy0bxGP/view?usp=drive_link",
-      noMindMap: true,
-    }),
-    lecture("lecture-4", "Lecture 4", "https://youtu.be/bC-9LDnNNCc?si=OKTR3AoVOaTA0m9C", {
-      pdfUrl: "https://drive.google.com/file/d/1g0HRpWGJaQsSsSpRFzvB6LZBjDJ0wte0/view?usp=drive_link",
-      noMindMap: true,
-    }),
-    lecture("lecture-5", "Lecture 5", "https://youtu.be/d0vnhY-fZeI?si=BZb4K1gT6-F5s1h4", {
-      pdfUrl: "https://drive.google.com/file/d/1UEKoUoaiCSLD8zBXXRo_SZ_KJh_g0dR4/view?usp=drive_link",
-      noMindMap: true,
-    }),
-    lecture("lecture-6", "Lecture 6", "https://youtu.be/yXP_TMMfPRM?si=OpvczYf6SOsrMTEH", {
-      pdfUrl: "https://drive.google.com/file/d/1xPRuJXbOXSoEeBsVvlDtYH_kRCPR3ijc/view?usp=drive_link",
-      noMindMap: true,
-    }),
-    lecture("lecture-7", "Lecture 7", "https://youtu.be/07XZXM0CNvo?si=gvmkzFHv4fBE1OZM", {
-      pdfUrl: "https://drive.google.com/file/d/1xPRuJXbOXSoEeBsVvlDtYH_kRCPR3ijc/view?usp=drive_link",
-      noMindMap: true,
-    }),
   ],
   economy: [
     lecture("lecture-1", "Lecture 1", "https://youtu.be/XFGaskx91MQ", {

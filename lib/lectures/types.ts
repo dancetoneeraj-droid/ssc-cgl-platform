@@ -24,7 +24,6 @@ export type LectureContent = {
 /** Top-level GK routes that host `/subjects/gk/lecture/{subject}/{id}` pages. */
 export const GK_FLAT_LECTURE_SUBJECTS = [
   "polity",
-  "geography",
   "economy",
   "science",
   "environment",

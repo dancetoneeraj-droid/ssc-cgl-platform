@@ -21,7 +21,7 @@ const fullCourseSubjects = [
   {
     href: "/subjects/gk/geography",
     title: "Geography",
-    description: "Climatology to Indian Geography — branching topics with lecture ladders.",
+    description: "Physical Geography and Indian Geography — structured lecture ladders.",
     meta: "Structured",
   },
   {

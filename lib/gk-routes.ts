@@ -30,24 +30,9 @@ export type HistorySlug = (typeof HISTORY_PERIODS)[number]["slug"];
 
 export const GEOGRAPHY_TOPICS = [
   {
-    slug: "climatology",
-    title: "Climatology",
-    description: "Climate zones, pressure belts, and weather patterns.",
-  },
-  {
-    slug: "oceanography",
-    title: "Oceanography",
-    description: "Oceans, currents, tides, and marine resources.",
-  },
-  {
-    slug: "geomorphology",
-    title: "Geomorphology",
-    description: "Landforms, tectonics, weathering, and erosion.",
-  },
-  {
-    slug: "human-geography",
-    title: "Human Geography",
-    description: "Population, settlements, economic activities, and maps.",
+    slug: "physical-geography",
+    title: "Physical Geography",
+    description: "Physical systems — landforms, climate, oceans, and earth processes.",
   },
   {
     slug: "indian-geography",
