@@ -29,6 +29,7 @@ export const GK_FLAT_LECTURE_SUBJECTS = [
   "environment",
   "static-gk",
   "current-affairs",
+  "map-based-topics",
 ] as const;
 
 export type GkFlatLectureSubject = (typeof GK_FLAT_LECTURE_SUBJECTS)[number];

@@ -49,6 +49,11 @@ const fullCourseSubjects = [
     title: "Environment",
     description: "Ecology, biodiversity, treaties, conventions, climate action.",
   },
+  {
+    href: "/subjects/gk/map-based-topics",
+    title: "Map Based Topics",
+    description: "Map-focused GK — locations, boundaries, and spatial recall for exams.",
+  },
 ];
 
 export default function GKFullCourseHubPage() {

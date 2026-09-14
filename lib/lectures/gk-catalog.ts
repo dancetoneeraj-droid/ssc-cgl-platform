@@ -511,6 +511,11 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
   environment: triple("Environment & ecology"),
   "static-gk": triple("Static GK"),
   "current-affairs": triple("Current Affairs"),
+  "map-based-topics": [
+    lecture("lecture-1", "Lecture 1", "https://youtube.com/watch?v=ZTOi_cyTxc8&si=8DIGKg1MUHyxlUgo", {
+      noMindMap: true,
+    }),
+  ],
 };
 
 export function getHistoryLectureList(period: HistorySlug): LectureContent[] {

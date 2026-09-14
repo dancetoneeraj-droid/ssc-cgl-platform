@@ -29,6 +29,7 @@ const flatSubjectLabel: Record<GkFlatLectureSubject, string> = {
   environment: "Environment",
   "static-gk": "Static GK",
   "current-affairs": "Current Affairs",
+  "map-based-topics": "Map Based Topics",
 };
 
 const fullCourseBase: CrumbSegment[] = [
