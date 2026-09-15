@@ -50,6 +50,7 @@ export const PYQ_APPROVED_EMAILS = [
   "gpalak149@gmail.com",
   "michaelanderson883@gmail.com",
   "snehab8989@gmail.com",
+  "kaushlendramech@gmail.com",
 ] as const;
 
 function normalizeEmail(email: string | null | undefined): string | null {
