@@ -530,6 +530,15 @@ const flatLectures: Record<GkFlatLectureSubject, LectureContent[]> = {
     lecture("lecture-6", "Lecture 6", "https://www.youtube.com/watch?v=_v1PJRuVElw", {
       noMindMap: true,
     }),
+    lecture("lecture-7", "Lecture 7", "https://youtu.be/YgQHIKhs6tM", {
+      noMindMap: true,
+    }),
+    lecture("lecture-8", "Lecture 8", "https://youtu.be/Fq3NugxouvU", {
+      noMindMap: true,
+    }),
+    lecture("lecture-9", "Lecture 9", "https://youtu.be/JI1bML-4iKU", {
+      noMindMap: true,
+    }),
   ],
 };
 
