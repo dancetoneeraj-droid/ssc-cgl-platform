@@ -24,6 +24,7 @@ export const FULL_COURSE_APPROVED_EMAILS = [
   "gpalak149@gmail.com",
   "michaelanderson883@gmail.com",
   "snehab8989@gmail.com",
+  "choudharydeepanshu2020@gmail.com",
 ] as const;
 
 /**
@@ -53,6 +54,7 @@ export const PYQ_APPROVED_EMAILS = [
   "snehab8989@gmail.com",
   "kaushlendramech@gmail.com",
   "terli.ravichandra@gmail.com",
+  "choudharydeepanshu2020@gmail.com",
 ] as const;
 
 function normalizeEmail(email: string | null | undefined): string | null {
